@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
+import NavBar from "@/components/nav/NavBar";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -36,8 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={archivo.variable}>
-      <body style={{ fontFamily: "var(--font-archivo), 'Archivo', sans-serif", fontStretch: "semi-expanded" }}>
+      <body>
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
