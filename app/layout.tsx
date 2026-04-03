@@ -6,7 +6,6 @@ import "./globals.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
-  axes: ["wdth"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-archivo",
   display: "swap",

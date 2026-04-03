@@ -1,3 +1,5 @@
+'use client'
+
 import { ExternalLink, Star } from 'lucide-react'
 
 const NAV_LINKS = [

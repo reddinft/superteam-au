@@ -8,7 +8,7 @@ import SouthernCrossSVG from '@/components/hero/SouthernCrossSVG'
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay: delay / 1000, ease: 'easeOut' },
+  transition: { duration: 0.6, delay: delay / 1000, ease: [0.0, 0.0, 0.2, 1.0] as [number, number, number, number] },
 })
 
 export default function HeroSection() {
