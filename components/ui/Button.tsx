@@ -30,7 +30,7 @@ const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   secondary: {
     backgroundColor: 'transparent',
     color: 'var(--text-primary)',
-    border: '1px solid var(--border-default)',
+    border: '1.5px solid var(--color-brand-yellow)',
   },
   ghost: {
     backgroundColor: 'transparent',
@@ -67,7 +67,7 @@ export default function Button({
         onMouseLeave={(e) => {
           const el = e.currentTarget
           el.style.filter = ''
-          if (variant === 'secondary') el.style.borderColor = 'var(--border-default)'
+          if (variant === 'secondary') el.style.borderColor = 'var(--color-brand-yellow)'
           if (variant === 'ghost') el.style.color = 'var(--text-secondary)'
         }}
       >
@@ -91,7 +91,7 @@ export default function Button({
       onMouseLeave={(e) => {
         const el = e.currentTarget
         el.style.filter = ''
-        if (variant === 'secondary') el.style.borderColor = 'var(--border-default)'
+        if (variant === 'secondary') el.style.borderColor = 'var(--color-brand-yellow)'
         if (variant === 'ghost') el.style.color = 'var(--text-secondary)'
       }}
     >

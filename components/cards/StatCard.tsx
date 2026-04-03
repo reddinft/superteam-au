@@ -56,7 +56,7 @@ export default function StatCard({ value, label, prefix = '', suffix = '', delay
         border: '1px solid var(--border-subtle)',
       }}
     >
-      <div className="text-5xl md:text-6xl font-extrabold mb-2" style={{ color: 'var(--text-primary)' }}>
+      <div className="text-5xl md:text-6xl font-extrabold mb-2" style={{ color: 'var(--color-brand-yellow)' }}>
         <span style={{ color: 'var(--color-brand-yellow)' }}>{prefix}</span>
         {count}
         <span style={{ color: 'var(--color-brand-yellow)' }}>{suffix}</span>

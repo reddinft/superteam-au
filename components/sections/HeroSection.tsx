@@ -55,21 +55,21 @@ export default function HeroSection() {
               Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.
             </motion.p>
 
-            {/* Stat Pills */}
-            <motion.div {...fadeUp(300)} className="flex flex-wrap gap-3">
-              <StatPill value="120+" label="Members" />
-              <StatPill value="20+" label="Events" />
-              <StatPill value="$50K+" label="Earned" />
-            </motion.div>
-
             {/* CTAs */}
-            <motion.div {...fadeUp(400)} className="flex flex-wrap gap-4">
+            <motion.div {...fadeUp(300)} className="flex flex-wrap gap-4">
               <Button variant="primary" size="md" href="#join">
                 Join the Community
               </Button>
-              <Button variant="ghost" size="md" href="#projects">
+              <Button variant="secondary" size="md" href="#projects">
                 Explore Projects →
               </Button>
+            </motion.div>
+
+            {/* Stat Pills */}
+            <motion.div {...fadeUp(400)} className="flex flex-wrap gap-3">
+              <StatPill value="120+" label="Members" />
+              <StatPill value="20+" label="Events" />
+              <StatPill value="$50K+" label="Earned" />
             </motion.div>
           </div>
 
