@@ -2,12 +2,14 @@ import { config, collection, singleton, fields } from '@keystatic/core'
 
 export default config({
   storage: {
-    kind: 'github',
-    repo: {
-      owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER!,
-      name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME!,
-    },
-  },
+    kind: process.env.KEYSTATIC_STORAGE_KIND === 'github' ? 'github' : 'local',
+    ...(process.env.KEYSTATIC_STORAGE_KIND === 'github' && {
+      repo: {
+        owner: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_OWNER!,
+        name: process.env.NEXT_PUBLIC_KEYSTATIC_GITHUB_REPO_NAME!,
+      },
+    }),
+  } as any,
 
   collections: {
     events: collection({
