@@ -9,8 +9,8 @@ const NAV_LINKS = [
   { label: 'Events', href: '#events' },
   { label: 'Projects', href: '#projects' },
   { label: 'Members', href: '#members' },
-  { label: 'Blog', href: '#blog' },
-  { label: 'Earn', href: '#earn' },
+  { label: 'Guilds', href: '#guilds' },
+  { label: 'About', href: '#about' },
 ]
 
 export default function NavBar() {
@@ -46,14 +46,18 @@ export default function NavBar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm transition-colors duration-150"
+                className="text-sm transition-colors duration-150 relative"
                 style={{ color: 'var(--text-secondary)' }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.color = 'var(--text-primary)')
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.color = 'var(--text-secondary)')
-                }
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.color = 'var(--color-brand-yellow)'
+                  e.currentTarget.style.textDecoration = 'underline'
+                  e.currentTarget.style.textDecorationColor = 'var(--color-brand-yellow)'
+                  e.currentTarget.style.textUnderlineOffset = '4px'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.color = 'var(--text-secondary)'
+                  e.currentTarget.style.textDecoration = 'none'
+                }}
               >
                 {link.label}
               </a>
