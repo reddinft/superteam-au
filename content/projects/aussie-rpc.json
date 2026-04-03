@@ -1,0 +1,8 @@
+{
+  "title": "Aussie RPC",
+  "category": "infra",
+  "description": "Low-latency Solana RPC nodes co-located in Sydney and Melbourne.",
+  "url": "https://aussierpc.io",
+  "featured": true,
+  "authorSlugs": ["liam-tran"]
+}

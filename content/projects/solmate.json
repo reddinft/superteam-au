@@ -1,0 +1,8 @@
+{
+  "title": "Solmate",
+  "category": "defi",
+  "description": "Peer-to-peer lending protocol with AUD oracle integration.",
+  "url": "https://solmate.finance",
+  "featured": false,
+  "authorSlugs": ["james-chen", "liam-tran"]
+}
