@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useCallback } from 'react'
+import { useState, useMemo, useCallback, useRef } from 'react'
 import MemberCard from '@/components/cards/MemberCard'
 
 interface MemberItem {
@@ -43,11 +43,12 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
   const [searchQuery, setSearchQuery] = useState('')
   const [debouncedQuery, setDebouncedQuery] = useState('')
 
-  // Simple debounce via useCallback + timeout
+  // True debounce: store timer ref and clear before setting new one
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const handleSearch = useCallback((value: string) => {
     setSearchQuery(value)
-    const t = setTimeout(() => setDebouncedQuery(value), 300)
-    return () => clearTimeout(t)
+    if (timerRef.current) clearTimeout(timerRef.current)
+    timerRef.current = setTimeout(() => setDebouncedQuery(value), 300)
   }, [])
 
   const filtered = useMemo(() => {

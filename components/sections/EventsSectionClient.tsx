@@ -28,23 +28,25 @@ export default function EventsSectionClient({ upcomingEvents, pastEvents }: Even
   return (
     <div>
       {/* Tab toggle */}
-      <div className="flex gap-2 mb-8">
+      <div className="flex gap-6 mb-8 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
         {(['upcoming', 'past'] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className="px-5 py-2 rounded-full text-sm font-semibold capitalize transition-all duration-150 cursor-pointer"
+            className="pb-3 text-sm font-semibold capitalize transition-all duration-150 cursor-pointer bg-transparent border-0 border-b-2 -mb-px"
             style={
               tab === t
                 ? {
-                    backgroundColor: 'var(--color-brand-yellow)',
-                    color: '#0A0A12',
-                    border: '1.5px solid var(--color-brand-yellow)',
+                    color: 'var(--text-primary)',
+                    borderBottomColor: 'var(--color-brand-purple)',
+                    borderBottomStyle: 'solid',
+                    borderBottomWidth: '2px',
                   }
                 : {
-                    backgroundColor: 'transparent',
                     color: 'var(--text-secondary)',
-                    border: '1.5px solid var(--border-default)',
+                    borderBottomColor: 'transparent',
+                    borderBottomStyle: 'solid',
+                    borderBottomWidth: '2px',
                   }
             }
           >
