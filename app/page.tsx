@@ -9,9 +9,35 @@ import MembersDirectory from '@/components/sections/MembersDirectory'
 import BlogPreview from '@/components/sections/BlogPreview'
 import PartnersStrip from '@/components/sections/PartnersStrip'
 import EarnSection from '@/components/sections/EarnSection'
+import TerminalWrapper from '@/components/terminal/TerminalWrapper'
 
 export default async function Home() {
   const siteConfig = await reader.singletons.siteConfig.read()
+  const allMembers = await reader.collections.members.all()
+  const allEvents = await reader.collections.events.all()
+  
+  const terminalMembers = allMembers.map((m) => ({
+    name: m.entry.name,
+    role: m.entry.role,
+    guild: m.entry.guild,
+  }))
+  
+  const today = new Date().toISOString().split('T')[0]
+  const terminalEvents = allEvents
+    .filter((e) => e.entry.date >= today)
+    .sort((a, b) => a.entry.date.localeCompare(b.entry.date))
+    .map((e) => ({
+      title: e.entry.title,
+      date: e.entry.date,
+      location: e.entry.location ?? 'TBA',
+    }))
+  
+  const terminalStats = {
+    membersCount: siteConfig?.membersCount,
+    eventsCount: siteConfig?.eventsCount,
+    projectsCount: siteConfig?.projectsCount,
+    totalEarned: siteConfig?.totalEarned,
+  }
 
   return (
     <main>
@@ -36,8 +62,13 @@ export default async function Home() {
       <ProjectsSection />
       <MembersDirectory />
       <BlogPreview />
+      <EarnSection earnUrl={siteConfig?.earnUrl ?? 'https://superteam.fun/earn'} />
       <PartnersStrip />
-      <EarnSection earnUrl={siteConfig?.earnUrl ?? 'https://superteam.fun/earn/s/superteamaustralia'} />
+      <TerminalWrapper
+        stats={terminalStats}
+        members={terminalMembers}
+        events={terminalEvents}
+      />
     </main>
   )
 }

@@ -34,6 +34,7 @@ export default config({
         }),
         description: fields.text({ label: 'Description', multiline: true }),
         rsvpUrl: fields.url({ label: 'RSVP URL' }),
+        recapUrl: fields.url({ label: 'Recap URL (for past events)' }),
         coverImage: fields.image({
           label: 'Cover Image',
           directory: 'public/images/events/',

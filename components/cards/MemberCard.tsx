@@ -117,35 +117,35 @@ export default function MemberCard({
       {(twitterUrl || githubUrl || linkedinUrl || websiteUrl) && (
         <div className="flex gap-3 mt-auto pt-1">
           {twitterUrl && (
-            <a href={twitterUrl} target="_blank" rel="noopener noreferrer" className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
+            <a href={twitterUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} on X / Twitter`} className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
             >
-              <AtSign size={16} />
+              <AtSign size={16} aria-hidden="true" />
             </a>
           )}
           {githubUrl && (
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} on GitHub`} className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
             >
-              <Code2 size={16} />
+              <Code2 size={16} aria-hidden="true" />
             </a>
           )}
           {linkedinUrl && (
-            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
+            <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} on LinkedIn`} className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
             >
-              <Link size={16} />
+              <Link size={16} aria-hidden="true" />
             </a>
           )}
           {websiteUrl && (
-            <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
+            <a href={websiteUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name}'s website`} className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
             >
-              <Globe size={16} />
+              <Globe size={16} aria-hidden="true" />
             </a>
           )}
         </div>

@@ -9,6 +9,7 @@ interface EventCardProps {
   location: string
   type: string
   rsvpUrl?: string | null
+  recapUrl?: string | null
   isUpcoming: boolean
   description?: string | null
 }
@@ -34,6 +35,7 @@ export default function EventCard({
   location,
   type,
   rsvpUrl,
+  recapUrl,
   isUpcoming,
   description,
 }: EventCardProps) {
@@ -112,11 +114,11 @@ export default function EventCard({
                 Free Event
               </span>
             )
-          ) : (
-            <Button variant="ghost" size="sm" href="#">
-              View Recap
+          ) : recapUrl ? (
+            <Button variant="ghost" size="sm" href={recapUrl}>
+              View Recap →
             </Button>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

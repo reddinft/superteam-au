@@ -6,21 +6,52 @@ import Button from '@/components/ui/Button'
 import MobileOverlay from './MobileOverlay'
 
 const NAV_LINKS = [
-  { label: 'Events', href: '#events' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Members', href: '#members' },
-  { label: 'Guilds', href: '#guilds' },
-  { label: 'About', href: '#about' },
+  { label: 'Events', href: '#events', id: 'events' },
+  { label: 'Projects', href: '#projects', id: 'projects' },
+  { label: 'Members', href: '#members', id: 'members' },
+  { label: 'Guilds', href: '#guilds', id: 'guilds' },
+  { label: 'About', href: '#about', id: 'about' },
 ]
 
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState<string>('')
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  // IntersectionObserver for active nav link
+  useEffect(() => {
+    const sectionIds = NAV_LINKS.map((l) => l.id)
+    const observers: IntersectionObserver[] = []
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find the most visible section
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)
+        if (visible.length > 0) {
+          setActiveSection(visible[0].target.id)
+        }
+      },
+      {
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+      }
+    )
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id)
+      if (el) observer.observe(el)
+    })
+    observers.push(observer)
+
+    return () => observers.forEach((o) => o.disconnect())
   }, [])
 
   return (
@@ -42,26 +73,32 @@ export default function NavBar() {
 
           {/* Desktop links */}
           <div className="hidden md:flex items-center gap-8">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm transition-colors duration-150 relative"
-                style={{ color: 'var(--text-secondary)' }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.color = 'var(--color-brand-yellow)'
-                  e.currentTarget.style.textDecoration = 'underline'
-                  e.currentTarget.style.textDecorationColor = 'var(--color-brand-yellow)'
-                  e.currentTarget.style.textUnderlineOffset = '4px'
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.color = 'var(--text-secondary)'
-                  e.currentTarget.style.textDecoration = 'none'
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.id
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="text-sm transition-all duration-150 relative pb-1"
+                  style={{
+                    color: isActive ? 'var(--color-brand-purple)' : 'var(--text-secondary)',
+                    borderBottom: isActive ? '2px solid var(--color-brand-purple)' : '2px solid transparent',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = 'var(--color-brand-yellow)'
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      e.currentTarget.style.color = 'var(--text-secondary)'
+                    }
+                  }}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
           </div>
 
           {/* CTA + hamburger */}

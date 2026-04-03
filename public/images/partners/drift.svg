@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40" fill="none">
+  <rect width="36" height="36" rx="8" y="2" fill="#5522E0" opacity="0.9"/>
+  <path d="M8 20 L18 10 L28 20 L18 30 Z" fill="rgba(255,255,255,0.8)"/>
+  <text x="46" y="26" font-family="Arial, sans-serif" font-weight="700" font-size="13" fill="#F0F0FF">Drift</text>
+  <text x="46" y="38" font-family="Arial, sans-serif" font-size="10" fill="#A0A0C0">Protocol</text>
+</svg>

@@ -1,5 +1,6 @@
 import { reader } from '@/lib/keystatic.reader'
 import SectionHeader from '@/components/ui/SectionHeader'
+import Button from '@/components/ui/Button'
 import ProjectsSectionClient from './ProjectsSectionClient'
 
 export default async function ProjectsSection() {
@@ -33,6 +34,11 @@ export default async function ProjectsSection() {
           <SectionHeader eyebrow="PROJECTS" title="What We're Building" align="left" />
         </div>
         <ProjectsSectionClient projects={projectsWithAuthors} />
+        <div className="mt-8 flex justify-center">
+          <Button variant="ghost" size="md" href="#">
+            Submit Your Project →
+          </Button>
+        </div>
       </div>
     </section>
   )

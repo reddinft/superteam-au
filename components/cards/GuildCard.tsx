@@ -16,14 +16,14 @@ export default function GuildCard({ icon: Icon, name, description, color, href =
 
   return (
     <div
-      className="flex flex-col gap-4 p-8 rounded-xl transition-all duration-200 cursor-pointer"
+      className="flex flex-col gap-4 p-8 rounded-xl transition-all duration-300 cursor-pointer"
       style={{
         backgroundColor: 'var(--surface-1)',
-        borderTop: `1px solid var(--border-subtle)`,
-        borderRight: `1px solid var(--border-subtle)`,
-        borderBottom: `1px solid var(--border-subtle)`,
-        borderLeft: hovered ? `4px solid ${color}` : `4px solid ${color}`,
-        boxShadow: hovered ? `inset 0 0 0 1px ${color}30, 0 4px 24px ${color}18` : 'none',
+        borderTop: hovered ? `2px solid ${color}` : `1px solid var(--border-subtle)`,
+        borderRight: hovered ? `2px solid ${color}` : `1px solid var(--border-subtle)`,
+        borderBottom: hovered ? `2px solid ${color}` : `1px solid var(--border-subtle)`,
+        borderLeft: `4px solid ${color}`,
+        boxShadow: hovered ? `0 0 0 0px transparent, 0 4px 24px ${color}28` : 'none',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

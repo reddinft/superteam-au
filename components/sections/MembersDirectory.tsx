@@ -1,5 +1,6 @@
 import { reader } from '@/lib/keystatic.reader'
 import SectionHeader from '@/components/ui/SectionHeader'
+import Button from '@/components/ui/Button'
 import MembersDirectoryClient from './MembersDirectoryClient'
 
 export default async function MembersDirectory() {
@@ -28,6 +29,11 @@ export default async function MembersDirectory() {
           <SectionHeader eyebrow="THE COMMUNITY" title="Australian Builders" align="left" />
         </div>
         <MembersDirectoryClient members={memberData} />
+        <div className="mt-8 flex justify-center">
+          <Button variant="ghost" size="md" href="#">
+            Add Your Profile →
+          </Button>
+        </div>
       </div>
     </section>
   )

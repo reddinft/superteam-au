@@ -11,6 +11,7 @@ interface EventEntry {
     location: string
     type: string
     rsvpUrl?: string | null
+    recapUrl?: string | null
     description?: string | null
   }
 }
@@ -70,6 +71,7 @@ export default function EventsSectionClient({ upcomingEvents, pastEvents }: Even
               location={e.entry.location ?? ''}
               type={e.entry.type}
               rsvpUrl={e.entry.rsvpUrl}
+              recapUrl={e.entry.recapUrl}
               isUpcoming={tab === 'upcoming'}
               description={e.entry.description}
             />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import ProjectCard from '@/components/cards/ProjectCard'
 
 interface ProjectItem {
@@ -67,17 +68,27 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {filtered.map((p) => (
-          <ProjectCard
-            key={p.slug}
-            title={p.entry.title}
-            description={p.entry.description}
-            category={p.entry.category}
-            url={p.entry.url}
-            authorNames={p.authorNames}
-            featured={p.entry.featured}
-          />
-        ))}
+        <AnimatePresence mode="popLayout">
+          {filtered.map((p) => (
+            <motion.div
+              key={p.slug}
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.25, ease: 'easeOut' }}
+            >
+              <ProjectCard
+                title={p.entry.title}
+                description={p.entry.description}
+                category={p.entry.category}
+                url={p.entry.url}
+                authorNames={p.authorNames}
+                featured={p.entry.featured}
+              />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
 
       {filtered.length === 0 && (

@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import StatCard from '@/components/cards/StatCard'
 
 interface ImpactStatsProps {
@@ -29,15 +30,22 @@ export default function ImpactStats({
     >
       <div className="container">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {STATS.map((stat) => (
-            <StatCard
+          {STATS.map((stat, i) => (
+            <motion.div
               key={stat.label}
-              value={stat.value}
-              label={stat.label}
-              prefix={stat.prefix}
-              suffix={stat.suffix}
-              delay={stat.delay}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-60px' }}
+              transition={{ duration: 0.5, delay: i * 0.2 }}
+            >
+              <StatCard
+                value={stat.value}
+                label={stat.label}
+                prefix={stat.prefix}
+                suffix={stat.suffix}
+                delay={stat.delay}
+              />
+            </motion.div>
           ))}
         </div>
       </div>

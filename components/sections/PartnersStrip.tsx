@@ -1,4 +1,5 @@
 import { reader } from '@/lib/keystatic.reader'
+import Button from '@/components/ui/Button'
 import PartnersStripClient from './PartnersStripClient'
 
 export default async function PartnersStrip() {
@@ -28,6 +29,11 @@ export default async function PartnersStrip() {
         BACKED BY
       </p>
       <PartnersStripClient partners={sorted} />
+      <div className="flex justify-center mt-6">
+        <Button variant="ghost" size="md" href="#">
+          Become a Partner →
+        </Button>
+      </div>
     </section>
   )
 }

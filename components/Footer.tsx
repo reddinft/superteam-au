@@ -1,6 +1,7 @@
 'use client'
 
 import { ExternalLink, Star } from 'lucide-react'
+import { useTerminal } from '@/components/terminal/TerminalProvider'
 
 const NAV_LINKS = [
   { label: 'Events', href: '#events' },
@@ -17,6 +18,7 @@ const COMMUNITY_LINKS = [
 ]
 
 export default function Footer() {
+  const { openTerminal } = useTerminal()
   return (
     <footer
       className="mt-auto"
@@ -118,7 +120,7 @@ export default function Footer() {
           {/* Hidden easter egg trigger */}
           <button
             id="southern-cross-trigger"
-            title="⭐"
+            title="Southern Cross — AU terminal"
             className="transition-opacity cursor-pointer p-1 rounded bg-transparent border-none"
             style={{
               opacity: 0.2,
@@ -126,7 +128,8 @@ export default function Footer() {
             }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.6')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.2')}
-            aria-hidden="true"
+            onClick={openTerminal}
+            aria-label="Open Superteam AU terminal (Easter egg)"
           >
             <Star size={14} fill="currentColor" />
           </button>
