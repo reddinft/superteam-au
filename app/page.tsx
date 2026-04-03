@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <ImpactStats />
       <AboutSection />
+      <ImpactStats />
       <GuildsSection />
       {/* Phase B sections will go here */}
     </main>
