@@ -5,13 +5,19 @@ import Button from '@/components/ui/Button'
 import StatPill from '@/components/ui/StatPill'
 import SouthernCrossSVG from '@/components/hero/SouthernCrossSVG'
 
+interface HeroSectionProps {
+  headline?: string
+  subheadline?: string
+  statPills?: Array<{ value: string; label: string }>
+}
+
 const fadeUp = (delay: number) => ({
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, delay: delay / 1000, ease: [0.0, 0.0, 0.2, 1.0] as [number, number, number, number] },
 })
 
-export default function HeroSection() {
+export default function HeroSection({ headline, subheadline, statPills }: HeroSectionProps = {}) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background radial gradient */}
@@ -42,8 +48,7 @@ export default function HeroSection() {
               className="text-5xl md:text-7xl font-extrabold leading-tight"
               style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
             >
-              Building Australia&apos;s<br />
-              <span style={{ color: 'var(--color-brand-purple-tint)' }}>Solana Future</span>
+              {headline ?? <>Building Australia&apos;s<br /><span style={{ color: 'var(--color-brand-purple-tint)' }}>Solana Future</span></>}
             </motion.h1>
 
             {/* Sub */}
@@ -52,7 +57,7 @@ export default function HeroSection() {
               className="text-lg md:text-xl max-w-xl"
               style={{ color: 'var(--text-secondary)' }}
             >
-              Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.
+              {subheadline ?? 'Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.'}
             </motion.p>
 
             {/* CTAs */}
@@ -67,9 +72,13 @@ export default function HeroSection() {
 
             {/* Stat Pills */}
             <motion.div {...fadeUp(400)} className="flex flex-wrap gap-3">
-              <StatPill value="120+" label="Members" />
-              <StatPill value="20+" label="Events" />
-              <StatPill value="$50K+" label="Earned" />
+              {(statPills ?? [
+                { value: '120+', label: 'Members' },
+                { value: '20+', label: 'Events' },
+                { value: '$50K+', label: 'Earned' },
+              ]).map((pill) => (
+                <StatPill key={pill.label} value={pill.value} label={pill.label} />
+              ))}
             </motion.div>
           </div>
 

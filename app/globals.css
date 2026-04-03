@@ -300,3 +300,8 @@ body {
   line-height: 1.4;
   letter-spacing: 0.06em;
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
