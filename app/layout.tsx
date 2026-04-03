@@ -23,14 +23,14 @@ export const metadata: Metadata = {
       "Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.",
     type: "website",
     locale: "en_AU",
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Superteam Australia' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Superteam Australia' }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Superteam Australia",
     description:
       "Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.",
-    images: ['/og-image.png'],
+    images: ['/og-image.jpg'],
   },
   alternates: {
     canonical: 'https://superteam.com.au',
