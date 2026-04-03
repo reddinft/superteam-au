@@ -1,0 +1,109 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+// Southern Cross (Crux) star positions in 300×300 viewBox
+// Based on actual Crux constellation layout
+const STARS = [
+  // α Crucis (Acrux) — bottom-left, largest
+  { cx: 95, cy: 230, r: 14, delay: 0 },
+  // β Crucis (Mimosa) — right, second largest
+  { cx: 235, cy: 155, r: 11, delay: 0.4 },
+  // γ Crucis (Gacrux) — top, third
+  { cx: 120, cy: 60, r: 9, delay: 0.8 },
+  // δ Crucis — upper-left
+  { cx: 60, cy: 130, r: 7, delay: 1.2 },
+  // ε Crucis (Ginan) — inner small
+  { cx: 145, cy: 165, r: 5, delay: 1.6 },
+]
+
+function StarShape({ cx, cy, r, delay }: { cx: number; cy: number; r: number; delay: number }) {
+  return (
+    <motion.g
+      animate={{
+        scale: [0.95, 1.05, 0.95],
+        opacity: [0.8, 1, 0.8],
+      }}
+      transition={{
+        duration: 2.5 + delay * 0.3,
+        delay,
+        repeat: Infinity,
+        ease: 'easeInOut',
+      }}
+      style={{ transformOrigin: `${cx}px ${cy}px` }}
+    >
+      {/* Outer glow */}
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r * 2.5}
+        fill="rgba(244, 166, 11, 0.08)"
+      />
+      {/* Mid glow */}
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r * 1.6}
+        fill="rgba(244, 166, 11, 0.15)"
+      />
+      {/* Core star — 4-pointed */}
+      <FourPointStar cx={cx} cy={cy} r={r} />
+    </motion.g>
+  )
+}
+
+function FourPointStar({ cx, cy, r }: { cx: number; cy: number; r: number }) {
+  // 4-pointed star path
+  const outer = r
+  const inner = r * 0.35
+  const points = [
+    [cx, cy - outer],
+    [cx + inner, cy - inner],
+    [cx + outer, cy],
+    [cx + inner, cy + inner],
+    [cx, cy + outer],
+    [cx - inner, cy + inner],
+    [cx - outer, cy],
+    [cx - inner, cy - inner],
+  ]
+    .map(([x, y]) => `${x},${y}`)
+    .join(' ')
+
+  return (
+    <polygon
+      points={points}
+      fill="var(--color-brand-yellow)"
+      style={{ filter: 'drop-shadow(0 0 6px rgba(244, 166, 11, 0.8))' }}
+    />
+  )
+}
+
+export default function SouthernCrossSVG({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 300 300"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-label="Southern Cross constellation"
+      role="img"
+    >
+      <defs>
+        <filter id="star-glow">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+      {/* Subtle constellation lines */}
+      <g opacity="0.1" stroke="var(--color-brand-yellow)" strokeWidth="1">
+        <line x1="95" y1="230" x2="120" y2="60" />
+        <line x1="60" y1="130" x2="235" y2="155" />
+      </g>
+      {STARS.map((star, i) => (
+        <StarShape key={i} {...star} />
+      ))}
+    </svg>
+  )
+}
