@@ -30,7 +30,7 @@ export default async function PartnersStrip() {
       </p>
       <PartnersStripClient partners={sorted} />
       <div className="flex justify-center mt-6">
-        <Button variant="ghost" size="md" href="#">
+        <Button variant="ghost" size="md" href="mailto:au@superteam.fun">
           Become a Partner →
         </Button>
       </div>

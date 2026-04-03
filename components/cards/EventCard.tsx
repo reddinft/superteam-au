@@ -44,15 +44,24 @@ export default function EventCard({
 
   return (
     <div
-      className={`flex gap-4 rounded-xl p-4 border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
+      className={`flex flex-col sm:flex-row gap-4 rounded-xl p-4 border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
       style={{
         backgroundColor: 'var(--surface-1)',
-        borderColor: 'var(--border-subtle)',
+        borderColor: 'var(--border-default)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-2px)'
+        e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = ''
+        e.currentTarget.style.boxShadow = ''
       }}
     >
       {/* Date block */}
       <div
-        className="flex-shrink-0 flex flex-col items-center justify-center rounded-lg p-3 min-w-[56px]"
+        className="flex-shrink-0 flex sm:flex-col items-center justify-center rounded-lg p-3 min-w-[56px] gap-2 sm:gap-0"
         style={{ backgroundColor: 'var(--surface-2)' }}
       >
         <span

@@ -12,18 +12,22 @@ interface StatCardProps {
 }
 
 function useCountUp(target: number, duration: number, started: boolean) {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(target)
 
   useEffect(() => {
     if (!started) return
+    // Animate a short flourish from 90% → 100%
+    const startVal = Math.round(target * 0.9)
+    setCount(startVal)
     const startTime = performance.now()
+    const range = target - startVal
 
     const tick = (now: number) => {
       const elapsed = now - startTime
       const progress = Math.min(elapsed / duration, 1)
       // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3)
-      setCount(Math.round(eased * target))
+      setCount(Math.round(startVal + eased * range))
       if (progress < 1) requestAnimationFrame(tick)
     }
 
@@ -50,10 +54,10 @@ export default function StatCard({ value, label, prefix = '', suffix = '', delay
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center justify-center p-8 rounded-xl"
+      className="flex flex-col items-center justify-center p-5 md:p-8 rounded-xl"
       style={{
         backgroundColor: 'var(--surface-1)',
-        border: '1px solid var(--border-subtle)',
+        border: '1px solid var(--border-default)',
       }}
     >
       <div className="text-5xl md:text-6xl font-extrabold mb-2" style={{ color: 'var(--color-brand-yellow)' }}>

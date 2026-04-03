@@ -12,8 +12,8 @@ const NAV_LINKS = [
 ]
 
 const COMMUNITY_LINKS = [
-  { label: 'Join Discord', href: '#discord' },
-  { label: 'Follow on X', href: '#twitter' },
+  { label: 'Join Discord', href: 'https://discord.gg/superteamau' },
+  { label: 'Follow on X', href: 'https://twitter.com/SuperteamAU' },
   { label: 'Superteam Earn', href: 'https://earn.superteam.fun' },
 ]
 
@@ -115,7 +115,7 @@ export default function Footer() {
           style={{ borderTop: '1px solid var(--border-subtle)' }}
         >
           <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
-            © 2024 Superteam Australia. Part of the global Superteam network.
+            © {new Date().getFullYear()} Superteam Australia. Part of the global Superteam network.
           </p>
           {/* Hidden easter egg trigger */}
           <button

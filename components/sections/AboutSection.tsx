@@ -50,7 +50,7 @@ export default function AboutSection() {
               style={{ borderLeft: '3px solid var(--color-brand-purple)' }}
             >
               <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                Founded in 2024, Superteam Australia is part of the global Superteam network — the talent layer of the Solana ecosystem. We connect Australian builders with opportunities, capital, and each other.
+                In 2024, a handful of Australian builders decided the Solana ecosystem needed a home in the southern hemisphere. Superteam AU is what happened next.
               </p>
               <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 From Sydney to Melbourne and beyond, we&apos;re building the most active Solana community in the Southern Hemisphere.

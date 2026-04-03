@@ -6,15 +6,15 @@ import { motion } from 'framer-motion'
 // Based on actual Crux constellation layout
 const STARS = [
   // α Crucis (Acrux) — bottom-left, largest
-  { cx: 95, cy: 230, r: 14, delay: 0 },
+  { cx: 95, cy: 230, r: 17, delay: 0 },
   // β Crucis (Mimosa) — right, second largest
-  { cx: 235, cy: 155, r: 11, delay: 0.4 },
+  { cx: 235, cy: 155, r: 14, delay: 0.4 },
   // γ Crucis (Gacrux) — top, third
-  { cx: 120, cy: 60, r: 9, delay: 0.8 },
+  { cx: 120, cy: 60, r: 11, delay: 0.8 },
   // δ Crucis — upper-left
-  { cx: 60, cy: 130, r: 7, delay: 1.2 },
+  { cx: 60, cy: 130, r: 9, delay: 1.2 },
   // ε Crucis (Ginan) — inner small
-  { cx: 145, cy: 165, r: 5, delay: 1.6 },
+  { cx: 145, cy: 165, r: 7, delay: 1.6 },
 ]
 
 function StarShape({ cx, cy, r, delay }: { cx: number; cy: number; r: number; delay: number }) {
@@ -37,14 +37,14 @@ function StarShape({ cx, cy, r, delay }: { cx: number; cy: number; r: number; de
         cx={cx}
         cy={cy}
         r={r * 2.5}
-        fill="rgba(244, 166, 11, 0.08)"
+        fill="rgba(244, 166, 11, 0.16)"
       />
       {/* Mid glow */}
       <circle
         cx={cx}
         cy={cy}
         r={r * 1.6}
-        fill="rgba(244, 166, 11, 0.15)"
+        fill="rgba(244, 166, 11, 0.30)"
       />
       {/* Core star — 4-pointed */}
       <FourPointStar cx={cx} cy={cy} r={r} />
@@ -86,6 +86,7 @@ export default function SouthernCrossSVG({ className = '' }: { className?: strin
       className={className}
       aria-label="Southern Cross constellation"
       role="img"
+      style={{ filter: 'drop-shadow(0 0 40px rgba(85,34,224,0.3))' }}
     >
       <defs>
         <filter id="star-glow">
@@ -95,9 +96,16 @@ export default function SouthernCrossSVG({ className = '' }: { className?: strin
             <feMergeNode in="SourceGraphic" />
           </feMerge>
         </filter>
+        <radialGradient id="spaceGlow" cx="50%" cy="55%" r="50%">
+          <stop offset="0%" stopColor="#1a0a4e" stopOpacity="0.9" />
+          <stop offset="60%" stopColor="#0d0820" stopOpacity="0.5" />
+          <stop offset="100%" stopColor="#0A0A12" stopOpacity="0" />
+        </radialGradient>
       </defs>
-      {/* Subtle constellation lines */}
-      <g opacity="0.1" stroke="var(--color-brand-yellow)" strokeWidth="1">
+      {/* Atmospheric backdrop */}
+      <circle cx="150" cy="165" r="145" fill="url(#spaceGlow)" />
+      {/* Constellation lines */}
+      <g opacity="0.35" stroke="var(--color-brand-yellow)" strokeWidth="1">
         <line x1="95" y1="230" x2="120" y2="60" />
         <line x1="60" y1="130" x2="235" y2="155" />
       </g>

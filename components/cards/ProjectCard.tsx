@@ -46,13 +46,20 @@ export default function ProjectCard({
       className="rounded-xl p-6 border flex flex-col transition-all duration-200 group"
       style={{
         backgroundColor: 'var(--surface-1)',
-        borderColor: 'var(--border-subtle)',
+        borderColor: 'var(--border-default)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = cat.hoverBorder
+        const el = e.currentTarget as HTMLElement
+        el.style.borderColor = cat.hoverBorder
+        el.style.transform = 'translateY(-2px)'
+        el.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = 'var(--border-subtle)'
+        const el = e.currentTarget as HTMLElement
+        el.style.borderColor = 'var(--border-default)'
+        el.style.transform = ''
+        el.style.boxShadow = ''
       }}
     >
       {/* Top row */}

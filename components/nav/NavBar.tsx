@@ -104,7 +104,7 @@ export default function NavBar() {
           {/* CTA + hamburger */}
           <div className="flex items-center gap-3">
             <div className="hidden md:block">
-              <Button variant="primary" size="sm" href="#join">
+              <Button variant="primary" size="sm" href="https://discord.gg/superteamau">
                 Join Now
               </Button>
             </div>

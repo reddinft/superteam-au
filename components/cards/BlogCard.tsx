@@ -33,7 +33,7 @@ export default function BlogCard({ slug, title, publishedAt, category, excerpt, 
         className="rounded-xl overflow-hidden border h-full flex flex-col transition-all duration-200"
         style={{
           backgroundColor: 'var(--surface-1)',
-          borderColor: 'var(--border-subtle)',
+          borderColor: 'var(--border-default)',
         }}
       >
         {/* Cover */}

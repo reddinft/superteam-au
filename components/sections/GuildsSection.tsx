@@ -9,25 +9,25 @@ const GUILDS = [
   {
     icon: Code2,
     name: 'Dev',
-    description: 'Build on Solana. Smart contracts, dApps, tools, and infrastructure.',
+    description: 'Write smart contracts, build dApps, ship open-source tools. If it runs on Solana, you’re building it.',
     color: '#5522E0',
   },
   {
     icon: Palette,
     name: 'Design',
-    description: 'Shape the Solana experience. UI/UX, brand, and visual storytelling.',
+    description: 'Every protocol needs an identity. Shape how Australian Solana projects look, feel, and get remembered.',
     color: '#F4A60B',
   },
   {
     icon: PenTool,
     name: 'Writers',
-    description: 'Tell the Solana story. Content, research, and ecosystem narratives.',
+    description: 'Tell the stories nobody else is telling. Research, threads, docs, long-form — AU’s voice in web3.',
     color: '#C1692A',
   },
   {
     icon: Settings,
     name: 'Ops',
-    description: 'Run the machine. Events, partnerships, and community operations.',
+    description: 'Run events, grow the community, land partnerships. The connective tissue that makes everything else work.',
     color: '#14F195',
   },
 ]

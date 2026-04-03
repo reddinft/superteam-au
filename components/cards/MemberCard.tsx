@@ -17,10 +17,10 @@ interface MemberCardProps {
 }
 
 const GUILD_COLORS: Record<string, string> = {
-  dev: '#14F195',
+  dev: '#5522E0',
   design: '#F4A60B',
-  writers: '#BCB3FF',
-  ops: '#E8A876',
+  writers: '#C1692A',
+  ops: '#14F195',
 }
 
 const GUILD_LABELS: Record<string, string> = {
@@ -66,10 +66,19 @@ export default function MemberCard({
 
   return (
     <div
-      className="rounded-xl p-5 border flex flex-col gap-3 transition-all duration-200"
+      className="rounded-xl p-5 border flex flex-col gap-3"
       style={{
         backgroundColor: 'var(--surface-1)',
-        borderColor: 'var(--border-subtle)',
+        borderColor: 'var(--border-default)',
+        transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.transform = 'translateY(-2px)'
+        e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.transform = ''
+        e.currentTarget.style.boxShadow = ''
       }}
     >
       {/* Avatar */}
@@ -104,11 +113,14 @@ export default function MemberCard({
         >
           {cityLabel(city)}
         </span>
-        <span className="flex items-center gap-1 text-xs" style={{ color: 'var(--text-tertiary)' }}>
-          <span
-            className="w-1.5 h-1.5 rounded-full inline-block"
-            style={{ backgroundColor: guildColor }}
-          />
+        <span
+          className="text-xs font-semibold px-2 py-0.5 rounded-full"
+          style={{
+            backgroundColor: `${guildColor}20`,
+            color: guildColor,
+            border: `1px solid ${guildColor}40`,
+          }}
+        >
           {guildLabel}
         </span>
       </div>

@@ -38,7 +38,7 @@ export default async function EventsSection() {
         </div>
         <EventsSectionClient upcomingEvents={upcoming} pastEvents={past} />
         <div className="mt-8 flex justify-center">
-          <Button variant="ghost" size="md" href="#">
+          <Button variant="ghost" size="md" href="https://superteam.fun/events">
             See All Events →
           </Button>
         </div>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import StatCard from '@/components/cards/StatCard'
+import SectionHeader from '@/components/ui/SectionHeader'
 
 interface ImpactStatsProps {
   membersCount?: number
@@ -24,11 +25,37 @@ export default function ImpactStats({
   ]
   return (
     <section
-      className="section-padding"
+      className="section-padding relative"
       id="impact"
       style={{ backgroundColor: 'var(--surface-1)' }}
     >
+      {/* Purple gradient line at top */}
+      <div
+        style={{
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent 0%, #5522E0 50%, transparent 100%)',
+          marginBottom: '0',
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+        }}
+      />
       <div className="container">
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.5 }}
+          className="mb-10"
+        >
+          <SectionHeader
+            eyebrow="IMPACT"
+            title="Building the Ecosystem"
+            align="center"
+          />
+        </motion.div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {STATS.map((stat, i) => (
             <motion.div

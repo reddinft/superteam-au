@@ -35,7 +35,7 @@ export default async function ProjectsSection() {
         </div>
         <ProjectsSectionClient projects={projectsWithAuthors} />
         <div className="mt-8 flex justify-center">
-          <Button variant="ghost" size="md" href="#">
+          <Button variant="ghost" size="md" href="https://superteam.fun/earn">
             Submit Your Project →
           </Button>
         </div>

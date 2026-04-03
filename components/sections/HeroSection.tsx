@@ -12,7 +12,7 @@ interface HeroSectionProps {
 }
 
 const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 20 },
+  initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: 0.6, delay: delay / 1000, ease: [0.0, 0.0, 0.2, 1.0] as [number, number, number, number] },
 })
@@ -20,13 +20,38 @@ const fadeUp = (delay: number) => ({
 export default function HeroSection({ headline, subheadline, statPills }: HeroSectionProps = {}) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background radial gradient */}
-      <div
+      {/* Multi-layer background for depth and atmosphere */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Primary purple glow — top right */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'radial-gradient(ellipse at 70% 30%, rgba(85,34,224,0.25) 0%, transparent 55%)',
+        }} />
+        {/* Warm yellow — bottom left */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'radial-gradient(ellipse at 15% 85%, rgba(244,166,11,0.10) 0%, transparent 45%)',
+        }} />
+        {/* Solana purple echo — top centre */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          background: 'radial-gradient(ellipse at 40% 0%, rgba(153,69,255,0.12) 0%, transparent 40%)',
+        }} />
+        {/* Grid overlay — technical feel */}
+        <div style={{
+          position: 'absolute', inset: 0,
+          backgroundImage: 'linear-gradient(rgba(240,240,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(240,240,255,0.04) 1px, transparent 1px)',
+          backgroundSize: '40px 40px',
+          maskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
+        }} />
+      </div>
+      {/* Ambient pulse overlay */}
+      <motion.div
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse at 60% 50%, rgba(85,34,224,0.15) 0%, transparent 70%)',
-        }}
+        style={{ background: 'radial-gradient(ellipse at 60% 40%, rgba(85,34,224,0.12) 0%, transparent 50%)' }}
+        animate={{ opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
 
       <div className="container relative z-10 pt-24 pb-16">
@@ -45,10 +70,10 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             {/* H1 */}
             <motion.h1
               {...fadeUp(100)}
-              className="text-5xl md:text-7xl font-extrabold leading-tight"
+              className="text-[40px] md:text-5xl lg:text-7xl font-extrabold leading-tight"
               style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
             >
-              {headline ?? <>Building Australia&apos;s<br /><span style={{ color: 'var(--color-brand-purple-tint)' }}>Solana Future</span></>}
+              {headline ?? <>Where AU Builders<br /><span style={{ color: 'var(--color-brand-purple-tint)' }}>Ship on Solana</span></>}
             </motion.h1>
 
             {/* Sub */}
@@ -57,12 +82,12 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               className="text-lg md:text-xl max-w-xl"
               style={{ color: 'var(--text-secondary)' }}
             >
-              {subheadline ?? 'Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.'}
+              {subheadline ?? 'Sydney to Melbourne, Perth to Brisbane — Australia’s most ambitious blockchain builders, shipping together.'}
             </motion.p>
 
             {/* CTAs */}
             <motion.div {...fadeUp(300)} className="flex flex-wrap gap-4">
-              <Button variant="primary" size="md" href="#join">
+              <Button variant="primary" size="md" href="https://discord.gg/superteamau">
                 Join the Community
               </Button>
               <Button variant="secondary" size="md" href="#projects">
