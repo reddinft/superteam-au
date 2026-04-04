@@ -102,16 +102,14 @@ export default function HeroSection({ headline, subheadline, statPills, joinUrl 
                 backgroundClip: 'text',
               }}
             >
-              {headline ?? <>
-                  Australia&apos;s Home for Solana Builders{' '}
-                  <img
-                    src="/images/au-flag.svg"
-                    alt="Australian flag"
-                    width={48}
-                    height={24}
-                    style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.2em', borderRadius: '3px', boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
-                  />
-                </>}
+              {(headline ?? "Australia's Home for Solana Builders").replace(/[\u{1F1E0}-\u{1F1FF}\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}]/gu, '').trim()}{' '}
+              <img
+                src="/images/au-flag.svg"
+                alt="Australian flag"
+                width={48}
+                height={24}
+                style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.2em', borderRadius: '3px', boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
+              />
             </motion.h1>
 
             {/* Sub */}

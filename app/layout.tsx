@@ -36,6 +36,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://superteam-au-redditech.vercel.app',
   },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/images/favicon-32.png',
+  },
 };
 
 export default async function RootLayout({
