@@ -15,10 +15,12 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-5 py-2.5 text-sm',
-  md: 'px-8 py-3.5 text-base',
-  lg: 'px-12 py-4 text-lg',
+// Inline padding/font styles — bypasses @layer base reset that zeroes out padding
+// when Tailwind utility classes are used (CSS layer specificity conflict in v4)
+const sizeStyles: Record<ButtonSize, React.CSSProperties> = {
+  sm: { padding: '8px 20px', fontSize: '0.875rem', lineHeight: '1.25rem' },
+  md: { padding: '12px 32px', fontSize: '1rem', lineHeight: '1.5rem' },
+  lg: { padding: '16px 48px', fontSize: '1.125rem', lineHeight: '1.75rem' },
 }
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
@@ -39,6 +41,18 @@ const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   },
 }
 
+const baseStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: '12px',
+  fontWeight: 600,
+  cursor: 'pointer',
+  whiteSpace: 'nowrap',
+  transition: 'all 0.15s ease',
+  textDecoration: 'none',
+}
+
 export default function Button({
   variant = 'primary',
   size = 'md',
@@ -48,19 +62,21 @@ export default function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const baseClass = `inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${sizeClasses[size]} ${className}`
-
-  const style = variantStyles[variant]
+  const style: React.CSSProperties = {
+    ...baseStyle,
+    ...sizeStyles[size],
+    ...variantStyles[variant],
+  }
 
   if (href) {
     return (
       <a
         href={href}
-        className={baseClass}
+        className={className}
         style={style}
         onMouseEnter={(e) => {
           const el = e.currentTarget
-          if (variant === 'primary') el.style.filter = 'brightness(1.1)'
+          if (variant === 'primary') el.style.filter = 'brightness(1.15)'
           if (variant === 'secondary') el.style.borderColor = 'var(--color-brand-purple)'
           if (variant === 'ghost') el.style.color = 'var(--text-primary)'
         }}
@@ -79,12 +95,12 @@ export default function Button({
   return (
     <button
       type={type}
-      className={baseClass}
+      className={className}
       style={style}
       onClick={onClick}
       onMouseEnter={(e) => {
         const el = e.currentTarget
-        if (variant === 'primary') el.style.filter = 'brightness(1.1)'
+        if (variant === 'primary') el.style.filter = 'brightness(1.15)'
         if (variant === 'secondary') el.style.borderColor = 'var(--color-brand-purple)'
         if (variant === 'ghost') el.style.color = 'var(--text-primary)'
       }}
