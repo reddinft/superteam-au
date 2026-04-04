@@ -118,7 +118,7 @@ export default function MemberCard({
       <div className="flex items-center flex-wrap" style={{ gap: '0.5rem' }}>
         <span
           style={{
-            fontSize: '0.75rem',
+            fontSize: '0.875rem',
             paddingLeft: '0.5rem',
             paddingRight: '0.5rem',
             paddingTop: '0.125rem',
@@ -132,7 +132,7 @@ export default function MemberCard({
         </span>
         <span
           style={{
-            fontSize: '0.75rem',
+            fontSize: '0.875rem',
             fontWeight: 600,
             paddingLeft: '0.5rem',
             paddingRight: '0.5rem',
