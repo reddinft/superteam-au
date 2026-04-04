@@ -3,7 +3,11 @@ import SectionHeader from '@/components/ui/SectionHeader'
 import Button from '@/components/ui/Button'
 import MembersDirectoryClient from './MembersDirectoryClient'
 
-export default async function MembersDirectory() {
+interface MembersDirectoryProps {
+  joinUrl?: string
+}
+
+export default async function MembersDirectory({ joinUrl }: MembersDirectoryProps = {}) {
   const members = await reader.collections.members.all()
 
   const memberData = members.map((m) => ({
@@ -30,7 +34,7 @@ export default async function MembersDirectory() {
         </div>
         <MembersDirectoryClient members={memberData} />
         <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-          <Button variant="ghost" size="md" href="https://t.me/superteamaustralia">
+          <Button variant="ghost" size="md" href={joinUrl ?? 'https://t.me/superteamaustralia'}>
             Add Your Profile →
           </Button>
         </div>

@@ -53,6 +53,7 @@ export default async function Home() {
           { value: `${siteConfig.eventsCount}+`, label: 'Events' },
           { value: siteConfig.totalEarned ?? '$50K+', label: 'Earned' },
         ] : undefined}
+        joinUrl={siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'}
       />
       <AboutSection />
       <ImpactStats
@@ -61,16 +62,20 @@ export default async function Home() {
         projectsCount={siteConfig?.projectsCount ?? undefined}
         totalEarned={siteConfig?.totalEarned ?? undefined}
       />
-      <GuildsSection />
+      <GuildsSection joinUrl={siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'} />
       <EventsSection />
       <ProjectsSection />
       <FAQSection />
-      <MembersDirectory />
-      <JoinSection />
+      <MembersDirectory joinUrl={siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'} />
+      <JoinSection
+        telegramUrl={siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'}
+        twitterUrl={siteConfig?.twitterUrl ?? 'https://x.com/SuperteamAU'}
+      />
       <BlogPreview />
       <EarnSection earnUrl={siteConfig?.earnUrl ?? 'https://superteam.fun/earn'} />
       <PartnersStrip />
       <TerminalWrapper
+        telegramUrl={siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'}
         stats={terminalStats}
         members={terminalMembers}
         events={terminalEvents}

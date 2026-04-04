@@ -14,7 +14,11 @@ const NAV_LINKS = [
   { label: 'About', href: '#about', id: 'about' },
 ]
 
-export default function NavBar() {
+interface NavBarProps {
+  joinUrl?: string
+}
+
+export default function NavBar({ joinUrl }: NavBarProps = {}) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>('')
@@ -111,7 +115,7 @@ export default function NavBar() {
           {/* CTA + hamburger */}
           <div className="flex items-center" style={{ gap: '0.75rem' }}>
             <div className="hidden md:block">
-              <Button variant="primary" size="sm" href="https://t.me/superteamaustralia">
+              <Button variant="primary" size="sm" href={joinUrl ?? 'https://t.me/superteamaustralia'}>
                 Join Now
               </Button>
             </div>
@@ -131,6 +135,7 @@ export default function NavBar() {
         isOpen={mobileOpen}
         onClose={() => setMobileOpen(false)}
         links={NAV_LINKS}
+        joinUrl={joinUrl}
       />
     </>
   )

@@ -9,6 +9,7 @@ interface HeroSectionProps {
   headline?: string
   subheadline?: string
   statPills?: Array<{ value: string; label: string }>
+  joinUrl?: string
 }
 
 const fadeUp = (delay: number) => ({
@@ -17,7 +18,7 @@ const fadeUp = (delay: number) => ({
   transition: { duration: 0.6, delay: delay / 1000, ease: [0.0, 0.0, 0.2, 1.0] as [number, number, number, number] },
 })
 
-export default function HeroSection({ headline, subheadline, statPills }: HeroSectionProps = {}) {
+export default function HeroSection({ headline, subheadline, statPills, joinUrl }: HeroSectionProps = {}) {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Multi-layer background for depth and atmosphere */}
@@ -131,7 +132,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               className="flex flex-wrap items-center"
               style={{ gap: '0.75rem' }}
             >
-              <Button variant="primary" size="md" href="https://t.me/superteamaustralia">
+              <Button variant="primary" size="md" href={joinUrl ?? 'https://t.me/superteamaustralia'}>
                 Get Involved
               </Button>
               <Button variant="secondary" size="md" href="#projects">

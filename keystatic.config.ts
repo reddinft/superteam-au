@@ -244,6 +244,7 @@ export default config({
         eventsCount: fields.integer({ label: 'Events Count', defaultValue: 0 }),
         projectsCount: fields.integer({ label: 'Projects Count', defaultValue: 0 }),
         totalEarned: fields.text({ label: 'Total Earned (e.g. $50K+)' }),
+        telegramUrl: fields.url({ label: 'Telegram URL' }),
         discordUrl: fields.url({ label: 'Discord URL' }),
         twitterUrl: fields.url({ label: 'Twitter URL' }),
         earnUrl: fields.url({ label: 'Earn URL' }),

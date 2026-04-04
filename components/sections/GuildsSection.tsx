@@ -32,7 +32,11 @@ const GUILDS = [
   },
 ]
 
-export default function GuildsSection() {
+interface GuildsSectionProps {
+  joinUrl?: string
+}
+
+export default function GuildsSection({ joinUrl }: GuildsSectionProps = {}) {
   return (
     <section className="section-padding" id="guilds">
       <div className="container">
@@ -63,7 +67,7 @@ export default function GuildsSection() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <GuildCard {...guild} />
+              <GuildCard {...guild} href={joinUrl ?? 'https://t.me/superteamaustralia'} />
             </motion.div>
           ))}
         </div>

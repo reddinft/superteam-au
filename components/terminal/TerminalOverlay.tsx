@@ -5,6 +5,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 interface TerminalProps {
   isOpen: boolean
   onClose: () => void
+  telegramUrl?: string
   stats?: {
     membersCount?: number | null
     eventsCount?: number | null
@@ -39,6 +40,7 @@ const HELP_TEXT = `Available commands:
 
 function getCommandOutput(
   cmd: string,
+  telegramUrl: string,
   stats?: TerminalProps['stats'],
   members?: TerminalProps['members'],
   events?: TerminalProps['events']
@@ -94,7 +96,7 @@ of decentralised technology in the Asia-Pacific region.
       return `How to join Superteam Australia:
 \n  1. Visit https://superteam.fun
   2. Create your profile and apply
-  3. Join our Telegram: https://t.me/superteamaustralia
+  3. Join our Telegram: ${telegramUrl}
   4. Attend an event — IRL or online
   5. Build something. Ship it. Repeat.
 \n  "The best time to join was yesterday. The second best is now."`
@@ -125,7 +127,7 @@ interface HistoryLine {
   text: string
 }
 
-export default function TerminalOverlay({ isOpen, onClose, stats, members, events }: TerminalProps) {
+export default function TerminalOverlay({ isOpen, onClose, telegramUrl, stats, members, events }: TerminalProps) {
   const [history, setHistory] = useState<HistoryLine[]>([])
   const [input, setInput] = useState('')
   const [cmdHistory, setCmdHistory] = useState<string[]>([])
@@ -199,7 +201,7 @@ export default function TerminalOverlay({ isOpen, onClose, stats, members, event
     setHistory((prev) => [...prev, { type: 'input', text: cmd }])
     if (cmd) setCmdHistory((prev) => [cmd, ...prev])
 
-    const output = getCommandOutput(cmd, stats, members, events)
+    const output = getCommandOutput(cmd, telegramUrl ?? 'https://t.me/superteamaustralia', stats, members, events)
 
     if (output === '__CLEAR__') {
       setHistory([])

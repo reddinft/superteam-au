@@ -8,6 +8,7 @@ const TerminalOverlay = dynamic(() => import('./TerminalOverlay'), { ssr: false 
 const TerminalMobile = dynamic(() => import('./TerminalMobile'), { ssr: false })
 
 interface TerminalWrapperProps {
+  telegramUrl?: string
   stats?: {
     membersCount?: number | null
     eventsCount?: number | null
@@ -18,7 +19,7 @@ interface TerminalWrapperProps {
   events?: Array<{ title: string; date: string; location: string }>
 }
 
-export default function TerminalWrapper({ stats, members, events }: TerminalWrapperProps) {
+export default function TerminalWrapper({ telegramUrl, stats, members, events }: TerminalWrapperProps) {
   const { isOpen, closeTerminal } = useTerminal()
   const [isMobile, setIsMobile] = useState(false)
 
@@ -45,6 +46,7 @@ export default function TerminalWrapper({ stats, members, events }: TerminalWrap
     <TerminalOverlay
       isOpen={isOpen}
       onClose={closeTerminal}
+      telegramUrl={telegramUrl}
       stats={stats}
       members={members}
       events={events}
