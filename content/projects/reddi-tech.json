@@ -1,0 +1,11 @@
+{
+  "title": "reddi.tech",
+  "description": "AI infrastructure and agentic systems platform. Building the tools for autonomous AI agents to operate at scale.",
+  "category": "infra",
+  "status": "active",
+  "region": ["AU"],
+  "url": "https://reddi.tech",
+  "telegramUrl": "redditech",
+  "authorSlugs": ["nissan-dookeran"],
+  "featured": true
+}

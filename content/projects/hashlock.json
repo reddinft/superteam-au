@@ -1,0 +1,9 @@
+{
+  "title": "Hashlock",
+  "description": "Australian blockchain security firm providing smart contract audits and security research for Solana protocols.",
+  "category": "security",
+  "status": "active",
+  "region": ["AU"],
+  "authorSlugs": ["fletcher-roberts"],
+  "featured": true
+}

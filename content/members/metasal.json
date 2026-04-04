@@ -1,10 +1,12 @@
 {
   "name": "Sal",
   "role": "Builder, SupaTeams",
+  "organization": "SupaTeams",
   "guild": "dev",
   "city": "sydney",
   "bio": "METASAL. Building SupaTeams on Solana. Active in the AU ecosystem.",
-  "twitterUrl": "https://x.com/metasal_",
+  "telegramUsername": "metasal",
   "websiteUrl": "https://metasal.xyz",
+  "ecosystemTags": ["Solana", "SupaTeams"],
   "featured": true
 }

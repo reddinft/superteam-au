@@ -1,0 +1,9 @@
+{
+  "title": "Demether",
+  "description": "Solana project spanning Australia and New Zealand, building in the ANZ ecosystem.",
+  "category": "other",
+  "status": "active",
+  "region": ["AU", "NZ"],
+  "authorSlugs": ["kartik-demether"],
+  "featured": false
+}
