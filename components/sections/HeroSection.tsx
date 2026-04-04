@@ -91,7 +91,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             <motion.h1
               {...fadeUp(100)}
               style={{
-                fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
+                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                 fontWeight: 800,
                 lineHeight: 1.1,
                 letterSpacing: '-0.02em',
