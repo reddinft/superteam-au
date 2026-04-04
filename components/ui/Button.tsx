@@ -16,9 +16,9 @@ interface ButtonProps {
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm',
-  md: 'px-5 py-2.5 text-sm md:px-6 md:py-3 md:text-base',
-  lg: 'px-8 py-4 text-lg',
+  sm: 'px-5 py-2 text-sm',
+  md: 'px-7 py-3 text-sm md:px-8 md:py-3.5 md:text-base',
+  lg: 'px-10 py-4 text-lg',
 }
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
