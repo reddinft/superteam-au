@@ -1,15 +1,14 @@
 {
   "name": "Sal Samani",
-  "displayName": "MetaSal",
-  "bio": "nonCMO @solana | Builder on Solana | 40+ tools shipped | Melbourne",
-  "city": "Melbourne",
-  "guild": "dev",
   "role": "Community Manager, Solana Foundation",
-  "twitter": "https://x.com/metasal",
-  "website": "https://metasal.xyz",
-  "github": "",
-  "linkedin": "https://au.linkedin.com/in/metasal",
+  "organization": "Solana Foundation",
+  "guild": "dev",
+  "city": "melbourne",
+  "bio": "nonCMO @solana | Builder on Solana | 40+ tools, apps and experiments shipped. Driving Solana ecosystem growth across Australia and New Zealand.",
+  "twitterUrl": "https://x.com/metasal",
+  "websiteUrl": "https://metasal.xyz",
+  "githubUrl": "",
+  "linkedinUrl": "https://au.linkedin.com/in/metasal",
   "featured": false,
-  "skills": ["community", "ecosystem", "tools"],
-  "tags": []
+  "ecosystemTags": ["Solana", "Community", "Ecosystem"]
 }
