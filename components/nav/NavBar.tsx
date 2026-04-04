@@ -90,10 +90,10 @@ export default function NavBar({ joinUrl }: NavBarProps = {}) {
                   href={link.href}
                   className="transition-all duration-150 relative"
                   style={{
-                    fontSize: '0.875rem',
+                    fontSize: '0.9375rem',
                     paddingBottom: '0.25rem',
-                    color: isActive ? 'var(--color-brand-purple)' : 'var(--text-secondary)',
-                    borderBottom: isActive ? '2px solid var(--color-brand-purple)' : '2px solid transparent',
+                    color: isActive ? 'var(--color-brand-yellow)' : 'var(--text-secondary)',
+                    borderBottom: isActive ? '2px solid var(--color-brand-yellow)' : '2px solid transparent',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) {
