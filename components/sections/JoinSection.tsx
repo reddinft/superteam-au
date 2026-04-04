@@ -12,34 +12,38 @@ interface JoinCard {
   variant: 'primary' | 'secondary'
 }
 
-const CARDS: JoinCard[] = [
-  {
-    icon: <MessageCircle size={28} />,
-    title: 'Telegram',
-    description: 'Our main community hub. Daily conversations, opportunities and builder updates.',
-    cta: 'Join Telegram →',
-    href: 'https://t.me/superteamaustralia',
-    variant: 'primary',
-  },
-  {
-    icon: <Hash size={28} />,
-    title: 'Discord',
-    description: 'Deep dives, working groups and ecosystem channels.',
-    cta: 'Join Discord →',
-    href: 'https://discord.gg/superteamau',
-    variant: 'secondary',
-  },
-  {
-    icon: <AtSign size={28} />,
-    title: 'Twitter / X',
-    description: 'Follow for events, announcements and ecosystem news.',
-    cta: 'Follow @SuperteamAU →',
-    href: 'https://twitter.com/SuperteamAU',
-    variant: 'secondary',
-  },
-]
+interface JoinSectionProps {
+  telegramUrl?: string
+  twitterUrl?: string
+}
 
-export default function JoinSection() {
+export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProps = {}) {
+  const CARDS: JoinCard[] = [
+    {
+      icon: <MessageCircle size={28} />,
+      title: 'Telegram',
+      description: 'Our main community hub. Daily conversations, opportunities and builder updates.',
+      cta: 'Join Telegram →',
+      href: telegramUrl ?? 'https://t.me/superteamaustralia',
+      variant: 'primary',
+    },
+    {
+      icon: <Hash size={28} />,
+      title: 'Twitter / X',
+      description: 'Follow for ecosystem updates, builder wins and opportunities.',
+      cta: 'Follow @SuperteamAU →',
+      href: twitterUrl ?? 'https://x.com/SuperteamAU',
+      variant: 'secondary',
+    },
+    {
+      icon: <AtSign size={28} />,
+      title: 'Twitter / X',
+      description: 'Follow for events, announcements and ecosystem news.',
+      cta: 'Follow @SuperteamAU →',
+      href: twitterUrl ?? 'https://twitter.com/SuperteamAU',
+      variant: 'secondary',
+    },
+  ]
   return (
     <section id="join" className="section-padding relative overflow-hidden">
       {/* Dark purple radial gradient background */}

@@ -11,7 +11,7 @@ interface GuildCardProps {
   href?: string
 }
 
-export default function GuildCard({ icon: Icon, name, description, color, href = 'https://discord.gg/superteamau' }: GuildCardProps) {
+export default function GuildCard({ icon: Icon, name, description, color, href = 'https://t.me/superteamaustralia' }: GuildCardProps) {
   const [hovered, setHovered] = useState(false)
 
   return (

@@ -11,13 +11,17 @@ const NAV_LINKS = [
   { label: 'Earn', href: '#earn' },
 ]
 
-const COMMUNITY_LINKS = [
-  { label: 'Join Discord', href: 'https://discord.gg/superteamau' },
-  { label: 'Follow on X', href: 'https://twitter.com/SuperteamAU' },
-  { label: 'Superteam Earn', href: 'https://earn.superteam.fun' },
-]
+interface FooterProps {
+  telegramUrl?: string
+  twitterUrl?: string
+}
 
-export default function Footer() {
+export default function Footer({ telegramUrl, twitterUrl }: FooterProps = {}) {
+  const COMMUNITY_LINKS = [
+    { label: 'Join Telegram', href: telegramUrl ?? 'https://t.me/superteamaustralia' },
+    { label: 'Follow on X', href: twitterUrl ?? 'https://twitter.com/SuperteamAU' },
+    { label: 'Superteam Earn', href: 'https://earn.superteam.fun' },
+  ]
   const { openTerminal } = useTerminal()
   return (
     <footer
@@ -44,7 +48,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center" style={{ gap: '0.75rem', marginTop: '0.5rem' }}>
               <a
-                href="https://twitter.com/SuperteamAU"
+                href={twitterUrl ?? 'https://twitter.com/SuperteamAU'}
                 aria-label="X / Twitter"
                 className="rounded-lg transition-colors"
                 style={{ color: 'var(--text-tertiary)', padding: '0.5rem' }}
@@ -57,7 +61,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://discord.gg/superteamau"
+                href={telegramUrl ?? 'https://t.me/superteamaustralia'}
                 aria-label="Discord"
                 className="rounded-lg transition-colors"
                 style={{ color: 'var(--text-tertiary)', padding: '0.5rem' }}

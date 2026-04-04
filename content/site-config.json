@@ -1,12 +1,13 @@
 {
-  "heroHeadline": "Australia's Home for Solana Builders 🇦🇺",
-  "heroSubheadline": "We accelerate founders, builders, creatives and institutions driving internet capital markets on Solana.",
-  "membersCount": 23,
-  "eventsCount": 24,
+  "heroHeadline": "Australia's Home for Solana Builders",
+  "heroSubheadline": "120 members across Sydney, Melbourne, Brisbane, Perth and beyond — building DeFi, DePIN, and the next generation of internet finance on Solana.",
+  "membersCount": 120,
+  "eventsCount": 30,
   "projectsCount": 24,
   "totalEarned": "$50K+",
-  "discordUrl": "https://discord.gg/superteamau",
-  "twitterUrl": "https://twitter.com/SuperteamAU",
+  "telegramUrl": "https://t.me/superteamaustralia",
+  "discordUrl": "",
+  "twitterUrl": "https://x.com/SuperteamAU",
   "earnUrl": "https://superteam.fun/earn/s/superteamaustralia",
   "contactEmail": "hello@superteam.com.au"
 }

@@ -9,9 +9,10 @@ interface MobileOverlayProps {
   isOpen: boolean
   onClose: () => void
   links: { label: string; href: string }[]
+  joinUrl?: string
 }
 
-export default function MobileOverlay({ isOpen, onClose, links }: MobileOverlayProps) {
+export default function MobileOverlay({ isOpen, onClose, links, joinUrl }: MobileOverlayProps) {
   // Lock body scroll when open
   useEffect(() => {
     if (isOpen) {
@@ -80,7 +81,7 @@ export default function MobileOverlay({ isOpen, onClose, links }: MobileOverlayP
 
           {/* CTA */}
           <div className="px-6 pb-10 pt-6">
-            <Button variant="primary" size="lg" href="https://discord.gg/superteamau" className="w-full justify-center">
+            <Button variant="primary" size="lg" href={joinUrl ?? 'https://t.me/superteamaustralia'} className="w-full justify-center">
               Join Now
             </Button>
           </div>

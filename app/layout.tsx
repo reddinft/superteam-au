@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import NavBar from "@/components/nav/NavBar";
 import Footer from "@/components/Footer";
 import { TerminalProvider } from "@/components/terminal/TerminalProvider";
+import { reader } from "@/lib/keystatic.reader";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -37,18 +38,22 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const siteConfig = await reader.singletons.siteConfig.read()
+  const joinUrl = siteConfig?.telegramUrl ?? 'https://t.me/superteamaustralia'
+  const twitterUrl = siteConfig?.twitterUrl ?? 'https://x.com/SuperteamAU'
+
   return (
     <html lang="en" className={archivo.variable}>
       <body>
         <TerminalProvider>
-          <NavBar />
+          <NavBar joinUrl={joinUrl} />
           {children}
-          <Footer />
+          <Footer telegramUrl={joinUrl} twitterUrl={twitterUrl} />
         </TerminalProvider>
       </body>
     </html>
