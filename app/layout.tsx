@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Superteam Australia — Building Australia's Solana Future",
   description:
     "Superteam Australia connects the builders, designers, and creators shaping the Solana ecosystem Down Under.",
-  metadataBase: new URL('https://superteam.com.au'),
+  metadataBase: new URL('https://superteam-au-redditech.vercel.app'),
   openGraph: {
     title: "Superteam Australia",
     description:
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   alternates: {
-    canonical: 'https://superteam.com.au',
+    canonical: 'https://superteam-au-redditech.vercel.app',
   },
 };
 

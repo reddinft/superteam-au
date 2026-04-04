@@ -1,12 +1,15 @@
 {
-  "name": "Sal",
-  "role": "Builder, SupaTeams",
-  "organization": "SupaTeams",
+  "name": "Sal Samani",
+  "displayName": "MetaSal",
+  "bio": "nonCMO @solana | Builder on Solana | 40+ tools shipped | Melbourne",
+  "city": "Melbourne",
   "guild": "dev",
-  "city": "sydney",
-  "bio": "METASAL. Building SupaTeams on Solana. Active in the AU ecosystem.",
-  "telegramUsername": "metasal",
-  "websiteUrl": "https://metasal.xyz",
-  "ecosystemTags": ["Solana", "SupaTeams"],
-  "featured": true
+  "role": "Community Manager, Solana Foundation",
+  "twitter": "https://x.com/metasal",
+  "website": "https://metasal.xyz",
+  "github": "",
+  "linkedin": "https://au.linkedin.com/in/metasal",
+  "featured": false,
+  "skills": ["community", "ecosystem", "tools"],
+  "tags": []
 }
