@@ -64,9 +64,9 @@ export default function NavBar({ joinUrl }: NavBarProps = {}) {
       <nav
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
-          background: scrolled ? 'rgba(10,10,18,0.8)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(12px)' : 'none',
-          borderBottom: scrolled ? '1px solid var(--border-subtle)' : 'none',
+          background: scrolled ? 'rgba(10,10,18,0.96)' : 'rgba(10,10,18,0.7)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid var(--border-subtle)',
         }}
       >
         <div className="container flex items-center justify-between" style={{ height: '4rem' }}>
@@ -90,10 +90,10 @@ export default function NavBar({ joinUrl }: NavBarProps = {}) {
                   href={link.href}
                   className="transition-all duration-150 relative"
                   style={{
-                    fontSize: '0.875rem',
+                    fontSize: '0.9375rem',
                     paddingBottom: '0.25rem',
-                    color: isActive ? 'var(--color-brand-purple)' : 'var(--text-secondary)',
-                    borderBottom: isActive ? '2px solid var(--color-brand-purple)' : '2px solid transparent',
+                    color: isActive ? 'var(--color-brand-yellow)' : 'var(--text-secondary)',
+                    borderBottom: isActive ? '2px solid var(--color-brand-yellow)' : '2px solid transparent',
                   }}
                   onMouseEnter={(e) => {
                     if (!isActive) {
