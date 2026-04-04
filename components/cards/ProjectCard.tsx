@@ -1,7 +1,5 @@
 'use client'
 
-import { ExternalLink } from 'lucide-react'
-
 interface ProjectCardProps {
   title: string
   description: string
@@ -9,6 +7,7 @@ interface ProjectCardProps {
   url?: string | null
   authorNames: string[]
   featured?: boolean
+  onClick?: () => void
 }
 
 const CATEGORY_STYLES: Record<string, { label: string; color: string; hoverBorder: string }> = {
@@ -37,6 +36,7 @@ export default function ProjectCard({
   category,
   url,
   authorNames,
+  onClick,
 }: ProjectCardProps) {
   const cat = CATEGORY_STYLES[category] ?? CATEGORY_STYLES.other
   const catBg = CATEGORY_BG[category] ?? CATEGORY_BG.other
@@ -44,11 +44,13 @@ export default function ProjectCard({
   return (
     <div
       className="rounded flex flex-col border transition-all duration-200 group"
+      onClick={onClick}
       style={{
         padding: '1.5rem',
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
+        cursor: onClick ? 'pointer' : 'default',
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLElement
@@ -80,19 +82,6 @@ export default function ProjectCard({
         >
           {cat.label}
         </span>
-        {url && (
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors duration-150"
-            style={{ color: 'var(--text-tertiary)' }}
-            onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}
-            onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
-          >
-            <ExternalLink size={16} />
-          </a>
-        )}
       </div>
 
       {/* Title */}

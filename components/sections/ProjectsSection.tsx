@@ -9,10 +9,15 @@ export default async function ProjectsSection() {
     reader.collections.members.all(),
   ])
 
-  // Build slug -> name map
-  const memberMap: Record<string, string> = {}
+  // Build slug -> member map with socials
+  const memberMap: Record<string, { name: string; twitterUrl?: string | null; telegramUsername?: string | null; xUrl?: string | null }> = {}
   for (const m of members) {
-    memberMap[m.slug] = m.entry.name
+    memberMap[m.slug] = {
+      name: m.entry.name,
+      twitterUrl: (m.entry as any).twitterUrl ?? null,
+      telegramUsername: (m.entry as any).telegramUsername ?? null,
+      xUrl: (m.entry as any).xUrl ?? null,
+    }
   }
 
   const projectsWithAuthors = projects.map((p) => ({
@@ -24,7 +29,9 @@ export default async function ProjectsSection() {
       url: p.entry.url,
       featured: p.entry.featured,
     },
-    authorNames: (p.entry.authorSlugs ?? []).map((s) => memberMap[s] ?? s),
+    authors: (p.entry.authorSlugs ?? []).map((s) => memberMap[s] ?? { name: s }),
+    authorNames: (p.entry.authorSlugs ?? []).map((s) => memberMap[s]?.name ?? s),
+    url: p.entry.url ?? null,
   }))
 
   return (
