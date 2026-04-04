@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: 'Events', href: '#events', id: 'events' },
   { label: 'Projects', href: '#projects', id: 'projects' },
   { label: 'Members', href: '#members', id: 'members' },
+  { label: 'Join', href: '#join', id: 'join' },
   { label: 'Guilds', href: '#guilds', id: 'guilds' },
   { label: 'About', href: '#about', id: 'about' },
 ]

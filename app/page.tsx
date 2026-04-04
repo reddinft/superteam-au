@@ -11,6 +11,8 @@ import MembersDirectory from '@/components/sections/MembersDirectory'
 import BlogPreview from '@/components/sections/BlogPreview'
 import PartnersStrip from '@/components/sections/PartnersStrip'
 import EarnSection from '@/components/sections/EarnSection'
+import FAQSection from '@/components/sections/FAQSection'
+import JoinSection from '@/components/sections/JoinSection'
 import TerminalWrapper from '@/components/terminal/TerminalWrapper'
 
 export default async function Home() {
@@ -62,7 +64,9 @@ export default async function Home() {
       <GuildsSection />
       <EventsSection />
       <ProjectsSection />
+      <FAQSection />
       <MembersDirectory />
+      <JoinSection />
       <BlogPreview />
       <EarnSection earnUrl={siteConfig?.earnUrl ?? 'https://superteam.fun/earn'} />
       <PartnersStrip />
