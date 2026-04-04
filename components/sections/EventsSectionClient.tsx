@@ -29,27 +29,32 @@ export default function EventsSectionClient({ upcomingEvents, pastEvents }: Even
   return (
     <div>
       {/* Tab toggle */}
-      <div className="flex gap-6 mb-8 border-b" style={{ borderColor: 'var(--border-subtle)' }}>
+      <div
+        className="flex border-b"
+        style={{ gap: '1.5rem', borderColor: 'var(--border-subtle)', marginBottom: '2rem' }}
+      >
         {(['upcoming', 'past'] as const).map((t) => (
           <button
             key={t}
             onClick={() => setTab(t)}
-            className="pb-3 text-sm font-semibold capitalize transition-all duration-150 cursor-pointer bg-transparent border-0 border-b-2 -mb-px"
-            style={
-              tab === t
+            className="capitalize transition-all duration-150 cursor-pointer bg-transparent border-0 -mb-px"
+            style={{
+              paddingBottom: '0.75rem',
+              fontSize: '0.875rem',
+              fontWeight: 600,
+              borderBottom: '2px solid',
+              ...(tab === t
                 ? {
                     color: 'var(--text-primary)',
                     borderBottomColor: 'var(--color-brand-purple)',
                     borderBottomStyle: 'solid',
-                    borderBottomWidth: '2px',
                   }
                 : {
                     color: 'var(--text-secondary)',
                     borderBottomColor: 'transparent',
                     borderBottomStyle: 'solid',
-                    borderBottomWidth: '2px',
-                  }
-            }
+                  }),
+            }}
           >
             {t === 'upcoming' ? `Upcoming (${upcomingEvents.length})` : `Past (${pastEvents.length})`}
           </button>
@@ -58,11 +63,14 @@ export default function EventsSectionClient({ upcomingEvents, pastEvents }: Even
 
       {/* Events list */}
       {events.length === 0 ? (
-        <p className="text-center py-12" style={{ color: 'var(--text-tertiary)' }}>
+        <p
+          className="text-center"
+          style={{ paddingTop: '3rem', paddingBottom: '3rem', color: 'var(--text-tertiary)' }}
+        >
           {tab === 'upcoming' ? 'No upcoming events right now — check back soon!' : 'No past events to show.'}
         </p>
       ) : (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col" style={{ gap: '1rem' }}>
           {events.map((e) => (
             <EventCard
               key={e.slug}

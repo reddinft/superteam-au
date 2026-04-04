@@ -55,23 +55,38 @@ export default function BlogCard({ slug, title, publishedAt, category, excerpt, 
                 background: 'linear-gradient(135deg, rgba(85,34,224,0.1) 0%, rgba(244,166,11,0.08) 100%)',
               }}
             >
-              <span className="text-4xl opacity-20">✦</span>
+              <span style={{ fontSize: '2.25rem', opacity: 0.2 }}>✦</span>
             </div>
           )}
         </div>
 
         {/* Content */}
-        <div className="p-5 flex flex-col gap-2 flex-1">
+        <div
+          className="flex flex-col flex-1"
+          style={{ padding: '1.25rem', gap: '0.5rem' }}
+        >
           <span
-            className="text-xs font-semibold px-2 py-0.5 rounded-full self-start"
-            style={{ backgroundColor: cat.bg, color: cat.color }}
+            style={{
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              paddingLeft: '0.5rem',
+              paddingRight: '0.5rem',
+              paddingTop: '0.125rem',
+              paddingBottom: '0.125rem',
+              borderRadius: '9999px',
+              alignSelf: 'flex-start',
+              backgroundColor: cat.bg,
+              color: cat.color,
+            }}
           >
             {cat.label}
           </span>
 
           <h3
-            className="font-semibold text-base leading-snug"
             style={{
+              fontWeight: 600,
+              fontSize: '1rem',
+              lineHeight: 1.3,
               color: 'var(--text-primary)',
               display: '-webkit-box',
               WebkitLineClamp: 2,
@@ -84,8 +99,8 @@ export default function BlogCard({ slug, title, publishedAt, category, excerpt, 
 
           {excerpt && (
             <p
-              className="text-sm"
               style={{
+                fontSize: '0.875rem',
                 color: 'var(--text-secondary)',
                 display: '-webkit-box',
                 WebkitLineClamp: 2,
@@ -97,13 +112,15 @@ export default function BlogCard({ slug, title, publishedAt, category, excerpt, 
             </p>
           )}
 
-          <div className="flex items-center justify-between mt-auto pt-2">
-            <span className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
+          <div
+            className="flex items-center justify-between"
+            style={{ marginTop: 'auto', paddingTop: '0.5rem' }}
+          >
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
               {formatDate(publishedAt)}
             </span>
             <span
-              className="text-xs font-medium transition-colors duration-150"
-              style={{ color: 'var(--text-tertiary)' }}
+              style={{ fontSize: '0.75rem', fontWeight: 500, color: 'var(--text-tertiary)', transition: 'color 0.15s' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--color-brand-yellow)')}
               onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-tertiary)')}
             >

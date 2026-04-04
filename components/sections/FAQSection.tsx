@@ -39,18 +39,18 @@ export default function FAQSection() {
       className="section-padding"
       style={{ backgroundColor: 'var(--surface-1)' }}
     >
-      <div className="container max-w-3xl mx-auto">
+      <div className="container" style={{ maxWidth: '48rem', marginLeft: 'auto', marginRight: 'auto' }}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          style={{ marginBottom: '2.5rem' }}
         >
           <SectionHeader eyebrow="FAQ" title="Common Questions" align="center" />
         </motion.div>
 
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col" style={{ gap: '0.75rem' }}>
           {FAQS.map((faq, i) => (
             <motion.div
               key={faq.question}
@@ -66,11 +66,18 @@ export default function FAQSection() {
             >
               <button
                 onClick={() => toggle(i)}
-                className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors duration-150"
-                style={{ color: 'var(--text-primary)' }}
+                className="w-full flex items-center justify-between text-left transition-colors duration-150"
+                style={{
+                  gap: '1rem',
+                  paddingLeft: '1.5rem',
+                  paddingRight: '1.5rem',
+                  paddingTop: '1.25rem',
+                  paddingBottom: '1.25rem',
+                  color: 'var(--text-primary)',
+                }}
                 aria-expanded={openIndex === i}
               >
-                <span className="font-semibold text-base">{faq.question}</span>
+                <span style={{ fontWeight: 600, fontSize: '1rem' }}>{faq.question}</span>
                 <motion.span
                   animate={{ rotate: openIndex === i ? 180 : 0 }}
                   transition={{ duration: 0.25 }}
@@ -92,8 +99,14 @@ export default function FAQSection() {
                     style={{ overflow: 'hidden' }}
                   >
                     <p
-                      className="px-6 pb-5 text-sm leading-relaxed"
-                      style={{ color: 'var(--text-secondary)' }}
+                      style={{
+                        paddingLeft: '1.5rem',
+                        paddingRight: '1.5rem',
+                        paddingBottom: '1.25rem',
+                        fontSize: '0.875rem',
+                        lineHeight: 1.7,
+                        color: 'var(--text-secondary)',
+                      }}
                     >
                       {faq.answer}
                     </p>

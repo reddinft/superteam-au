@@ -66,8 +66,10 @@ export default function MemberCard({
 
   return (
     <div
-      className="rounded-md p-5 border flex flex-col gap-3"
+      className="rounded-md flex flex-col border"
       style={{
+        padding: '1.25rem',
+        gap: '0.75rem',
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
@@ -82,40 +84,61 @@ export default function MemberCard({
       }}
     >
       {/* Avatar */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center" style={{ gap: '0.75rem' }}>
         {avatar ? (
-          <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+          <div className="relative rounded-full overflow-hidden flex-shrink-0" style={{ width: '3rem', height: '3rem' }}>
             <Image src={avatar} alt={name} fill className="object-cover" />
           </div>
         ) : (
           <div
-            className="w-12 h-12 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold"
-            style={{ backgroundColor: guildColor + '33', color: guildColor }}
+            className="rounded-full flex-shrink-0 flex items-center justify-center"
+            style={{
+              width: '3rem',
+              height: '3rem',
+              fontSize: '0.875rem',
+              fontWeight: 700,
+              backgroundColor: guildColor + '33',
+              color: guildColor,
+            }}
           >
             {initials}
           </div>
         )}
         <div className="min-w-0">
-          <h3 className="font-semibold text-base truncate" style={{ color: 'var(--text-primary)' }}>
+          <h3 style={{ fontWeight: 600, fontSize: '1rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--text-primary)' }}>
             {name}
           </h3>
-          <p className="text-sm truncate" style={{ color: 'var(--text-secondary)' }}>
+          <p style={{ fontSize: '0.875rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--text-secondary)' }}>
             {role}
           </p>
         </div>
       </div>
 
       {/* Badges */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex items-center flex-wrap" style={{ gap: '0.5rem' }}>
         <span
-          className="text-xs px-2 py-0.5 rounded-full"
-          style={{ backgroundColor: 'var(--surface-2)', color: 'var(--text-secondary)' }}
+          style={{
+            fontSize: '0.75rem',
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
+            paddingTop: '0.125rem',
+            paddingBottom: '0.125rem',
+            borderRadius: '9999px',
+            backgroundColor: 'var(--surface-2)',
+            color: 'var(--text-secondary)',
+          }}
         >
           {cityLabel(city)}
         </span>
         <span
-          className="text-xs font-semibold px-2 py-0.5 rounded-full"
           style={{
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            paddingLeft: '0.5rem',
+            paddingRight: '0.5rem',
+            paddingTop: '0.125rem',
+            paddingBottom: '0.125rem',
+            borderRadius: '9999px',
             backgroundColor: `${guildColor}20`,
             color: guildColor,
             border: `1px solid ${guildColor}40`,
@@ -127,7 +150,7 @@ export default function MemberCard({
 
       {/* Social links */}
       {(twitterUrl || githubUrl || linkedinUrl || websiteUrl) && (
-        <div className="flex gap-3 mt-auto pt-1">
+        <div className="flex" style={{ gap: '0.75rem', marginTop: 'auto', paddingTop: '0.25rem' }}>
           {twitterUrl && (
             <a href={twitterUrl} target="_blank" rel="noopener noreferrer" aria-label={`${name} on X / Twitter`} className="transition-colors duration-150" style={{ color: 'var(--text-tertiary)' }}
               onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = 'var(--text-primary)')}

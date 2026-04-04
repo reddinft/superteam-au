@@ -9,7 +9,7 @@ const GUILDS = [
   {
     icon: Code2,
     name: 'Dev',
-    description: 'Write smart contracts, build dApps, ship open-source tools. If it runs on Solana, you’re building it.',
+    description: "Write smart contracts, build dApps, ship open-source tools. If it runs on Solana, you're building it.",
     color: '#5522E0',
   },
   {
@@ -21,7 +21,7 @@ const GUILDS = [
   {
     icon: PenTool,
     name: 'Writers',
-    description: 'Tell the stories nobody else is telling. Research, threads, docs, long-form — AU’s voice in web3.',
+    description: "Tell the stories nobody else is telling. Research, threads, docs, long-form — AU's voice in web3.",
     color: '#C1692A',
   },
   {
@@ -41,7 +41,7 @@ export default function GuildsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
-          className="mb-12"
+          style={{ marginBottom: '3rem' }}
         >
           <SectionHeader
             eyebrow="GUILDS"
@@ -51,7 +51,10 @@ export default function GuildsSection() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          style={{ gap: '1.5rem' }}
+        >
           {GUILDS.map((guild, i) => (
             <motion.div
               key={guild.name}

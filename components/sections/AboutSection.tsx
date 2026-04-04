@@ -71,7 +71,7 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7, ease: 'easeOut' }}
-          className="max-w-3xl mb-12"
+          style={{ maxWidth: '48rem', marginBottom: '3rem' }}
         >
           <SectionHeader
             eyebrow="OUR MISSION"
@@ -79,8 +79,12 @@ export default function AboutSection() {
             align="left"
           />
           <p
-            className="text-base md:text-lg leading-relaxed mt-4"
-            style={{ color: 'var(--text-secondary)' }}
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.125rem)',
+              lineHeight: 1.7,
+              marginTop: '1rem',
+              color: 'var(--text-secondary)',
+            }}
           >
             Superteam Australia exists to accelerate founders, builders, creatives and institutions in Australia,
             and Australians building globally, driving the development of internet capital markets on Solana.
@@ -88,7 +92,10 @@ export default function AboutSection() {
         </motion.div>
 
         {/* 6-pillar grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div
+          className="grid grid-cols-2 md:grid-cols-3"
+          style={{ gap: '1rem' }}
+        >
           {PILLARS.map((pillar, i) => {
             const Icon = pillar.icon
             return (
@@ -98,30 +105,45 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-60px' }}
                 transition={{ duration: 0.5, delay: i * 0.07, ease: 'easeOut' }}
-                className="flex flex-col gap-3 rounded-xl p-5"
+                className="flex flex-col rounded-xl"
                 style={{
+                  gap: '0.75rem',
+                  padding: '1.25rem',
                   background: 'rgba(255,255,255,0.03)',
                   border: '1px solid rgba(255,255,255,0.08)',
                 }}
               >
                 <div
-                  className="w-9 h-9 flex items-center justify-center rounded-lg"
-                  style={{ background: 'rgba(255,255,255,0.06)' }}
+                  className="flex items-center justify-center rounded-lg"
+                  style={{
+                    width: '2.25rem',
+                    height: '2.25rem',
+                    background: 'rgba(255,255,255,0.06)',
+                  }}
                 >
                   <Icon size={18} style={{ color: pillar.iconColor }} />
                 </div>
                 <h3
-                  className="text-sm font-semibold leading-snug"
-                  style={{ color: 'var(--text-primary)' }}
+                  style={{
+                    fontSize: '0.875rem',
+                    fontWeight: 600,
+                    lineHeight: 1.3,
+                    color: 'var(--text-primary)',
+                  }}
                 >
                   {pillar.title}
                 </h3>
-                <ul className="flex flex-col gap-1.5">
+                <ul className="flex flex-col" style={{ gap: '0.375rem' }}>
                   {pillar.bullets.map((bullet) => (
                     <li
                       key={bullet}
-                      className="text-xs leading-relaxed flex gap-2 items-start"
-                      style={{ color: 'var(--text-secondary)' }}
+                      className="flex items-start"
+                      style={{
+                        fontSize: '0.75rem',
+                        lineHeight: 1.6,
+                        gap: '0.5rem',
+                        color: 'var(--text-secondary)',
+                      }}
                     >
                       <span style={{ color: pillar.iconColor, marginTop: '2px', flexShrink: 0 }}>•</span>
                       {bullet}

@@ -43,8 +43,9 @@ export default function ProjectCard({
 
   return (
     <div
-      className="rounded p-6 border flex flex-col transition-all duration-200 group"
+      className="rounded flex flex-col border transition-all duration-200 group"
       style={{
+        padding: '1.5rem',
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
@@ -65,8 +66,17 @@ export default function ProjectCard({
       {/* Top row */}
       <div className="flex items-center justify-between">
         <span
-          className="text-xs font-semibold px-2.5 py-1 rounded-full"
-          style={{ backgroundColor: catBg, color: cat.color }}
+          style={{
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            paddingLeft: '0.625rem',
+            paddingRight: '0.625rem',
+            paddingTop: '0.25rem',
+            paddingBottom: '0.25rem',
+            borderRadius: '9999px',
+            backgroundColor: catBg,
+            color: cat.color,
+          }}
         >
           {cat.label}
         </span>
@@ -87,16 +97,17 @@ export default function ProjectCard({
 
       {/* Title */}
       <h3
-        className="text-lg font-semibold mt-3"
-        style={{ color: 'var(--text-primary)' }}
+        style={{ fontSize: '1.125rem', fontWeight: 600, marginTop: '0.75rem', color: 'var(--text-primary)' }}
       >
         {title}
       </h3>
 
       {/* Description */}
       <p
-        className="text-sm mt-1 flex-1"
         style={{
+          fontSize: '0.875rem',
+          marginTop: '0.25rem',
+          flex: 1,
           color: 'var(--text-secondary)',
           display: '-webkit-box',
           WebkitLineClamp: 2,
@@ -110,8 +121,7 @@ export default function ProjectCard({
       {/* Authors */}
       {authorNames.length > 0 && (
         <p
-          className="text-xs mt-3"
-          style={{ color: 'var(--text-tertiary)' }}
+          style={{ fontSize: '0.75rem', marginTop: '0.75rem', color: 'var(--text-tertiary)' }}
         >
           by {authorNames.join(', ')}
         </p>

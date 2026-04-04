@@ -44,8 +44,10 @@ export default function EventCard({
 
   return (
     <div
-      className={`flex flex-col sm:flex-row gap-4 rounded-md p-4 border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
+      className={`flex flex-col sm:flex-row rounded-md border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
       style={{
+        gap: '1rem',
+        padding: '1rem',
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
         transition: 'transform 0.2s ease, box-shadow 0.2s ease',
@@ -61,18 +63,21 @@ export default function EventCard({
     >
       {/* Date block */}
       <div
-        className="flex-shrink-0 flex sm:flex-col items-center justify-center rounded-lg p-3 min-w-[56px] gap-2 sm:gap-0"
-        style={{ backgroundColor: 'var(--surface-2)' }}
+        className="flex-shrink-0 flex sm:flex-col items-center justify-center rounded-lg"
+        style={{
+          padding: '0.75rem',
+          minWidth: '56px',
+          gap: '0.5rem',
+          backgroundColor: 'var(--surface-2)',
+        }}
       >
         <span
-          className="text-3xl font-bold leading-none"
-          style={{ color: 'var(--color-brand-yellow)' }}
+          style={{ fontSize: '1.875rem', fontWeight: 700, lineHeight: 1, color: 'var(--color-brand-yellow)' }}
         >
           {day}
         </span>
         <span
-          className="text-xs uppercase tracking-wider mt-1"
-          style={{ color: 'var(--text-tertiary)' }}
+          style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem', color: 'var(--text-tertiary)' }}
         >
           {month}
         </span>
@@ -80,36 +85,51 @@ export default function EventCard({
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center flex-wrap" style={{ gap: '0.5rem' }}>
           <span
-            className="text-xs font-semibold px-2 py-0.5 rounded-full"
-            style={{ backgroundColor: typeStyle.bg, color: typeStyle.color }}
+            style={{
+              fontSize: '0.75rem',
+              fontWeight: 600,
+              paddingLeft: '0.5rem',
+              paddingRight: '0.5rem',
+              paddingTop: '0.125rem',
+              paddingBottom: '0.125rem',
+              borderRadius: '9999px',
+              backgroundColor: typeStyle.bg,
+              color: typeStyle.color,
+            }}
           >
             {typeStyle.label}
           </span>
         </div>
         <h3
-          className="text-lg font-semibold mt-1 truncate"
-          style={{ color: 'var(--text-primary)' }}
+          style={{ fontSize: '1.125rem', fontWeight: 600, marginTop: '0.25rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: 'var(--text-primary)' }}
         >
           {title}
         </h3>
         {description && (
           <p
-            className="text-sm mt-1 line-clamp-2"
-            style={{ color: 'var(--text-secondary)' }}
+            style={{
+              fontSize: '0.875rem',
+              marginTop: '0.25rem',
+              color: 'var(--text-secondary)',
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
           >
             {description}
           </p>
         )}
-        <div className="flex items-center gap-1 mt-2">
+        <div className="flex items-center" style={{ gap: '0.25rem', marginTop: '0.5rem' }}>
           <MapPin size={14} style={{ color: 'var(--text-tertiary)' }} />
-          <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+          <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
             {location}
           </span>
         </div>
 
-        <div className="mt-3">
+        <div style={{ marginTop: '0.75rem' }}>
           {isUpcoming ? (
             rsvpUrl ? (
               <Button variant="primary" size="sm" href={rsvpUrl}>
@@ -117,8 +137,17 @@ export default function EventCard({
               </Button>
             ) : (
               <span
-                className="text-xs font-semibold px-4 py-2 rounded-xl"
-                style={{ backgroundColor: 'var(--surface-2)', color: 'var(--text-secondary)' }}
+                style={{
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  paddingLeft: '1rem',
+                  paddingRight: '1rem',
+                  paddingTop: '0.5rem',
+                  paddingBottom: '0.5rem',
+                  borderRadius: '0.75rem',
+                  backgroundColor: 'var(--surface-2)',
+                  color: 'var(--text-secondary)',
+                }}
               >
                 Free Event
               </span>

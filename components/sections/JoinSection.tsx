@@ -64,27 +64,51 @@ export default function JoinSection() {
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
-          className="text-center mb-12"
+          className="text-center"
+          style={{ marginBottom: '3rem' }}
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.55 }}
         >
           <span
-            className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-4"
-            style={{ backgroundColor: 'rgba(85,34,224,0.25)', color: '#9945FF', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
+            className="inline-block"
+            style={{
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              paddingLeft: '0.75rem',
+              paddingRight: '0.75rem',
+              paddingTop: '0.25rem',
+              paddingBottom: '0.25rem',
+              borderRadius: '9999px',
+              marginBottom: '1rem',
+              backgroundColor: 'rgba(85,34,224,0.25)',
+              color: '#9945FF',
+              fontFamily: 'var(--font-mono)',
+            }}
           >
             JOIN THE COMMUNITY
           </span>
           <h2
-            className="text-3xl md:text-4xl font-bold mb-4"
-            style={{ color: '#FFFFFF' }}
+            style={{
+              fontSize: 'clamp(1.875rem, 4vw, 2.25rem)',
+              fontWeight: 700,
+              marginBottom: '1rem',
+              color: '#FFFFFF',
+            }}
           >
             Find Your People
           </h2>
           <p
-            className="text-base md:text-lg max-w-xl mx-auto"
-            style={{ color: 'rgba(240,240,255,0.75)' }}
+            style={{
+              fontSize: 'clamp(1rem, 2vw, 1.125rem)',
+              maxWidth: '36rem',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              color: 'rgba(240,240,255,0.75)',
+            }}
           >
             Open to all. Builders, founders, creatives, investors — if you&apos;re serious about
             Solana in Australia, this is where you belong.
@@ -92,7 +116,10 @@ export default function JoinSection() {
         </motion.div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{ gap: '1.25rem' }}
+        >
           {CARDS.map((card, i) => (
             <motion.div
               key={card.title}
@@ -100,8 +127,10 @@ export default function JoinSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.45, delay: i * 0.1 }}
-              className="flex flex-col gap-5 rounded-2xl p-7"
+              className="flex flex-col rounded-2xl"
               style={{
+                gap: '1.25rem',
+                padding: '1.75rem',
                 backgroundColor:
                   card.variant === 'primary'
                     ? 'rgba(85,34,224,0.25)'
@@ -115,8 +144,10 @@ export default function JoinSection() {
             >
               {/* Icon */}
               <div
-                className="w-12 h-12 rounded-xl flex items-center justify-center"
+                className="flex items-center justify-center rounded-xl"
                 style={{
+                  width: '3rem',
+                  height: '3rem',
                   backgroundColor:
                     card.variant === 'primary'
                       ? 'rgba(153,69,255,0.3)'
@@ -128,11 +159,11 @@ export default function JoinSection() {
               </div>
 
               {/* Text */}
-              <div className="flex flex-col gap-2 flex-1">
-                <h3 className="font-bold text-lg" style={{ color: '#FFFFFF' }}>
+              <div className="flex flex-col flex-1" style={{ gap: '0.5rem' }}>
+                <h3 style={{ fontWeight: 700, fontSize: '1.125rem', color: '#FFFFFF' }}>
                   {card.title}
                 </h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'rgba(240,240,255,0.7)' }}>
+                <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'rgba(240,240,255,0.7)' }}>
                   {card.description}
                 </p>
               </div>
@@ -142,16 +173,22 @@ export default function JoinSection() {
                 href={card.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-150 whitespace-nowrap"
-                style={
-                  card.variant === 'primary'
+                className="inline-flex items-center justify-center rounded-xl transition-all duration-150 whitespace-nowrap"
+                style={{
+                  paddingLeft: '1.25rem',
+                  paddingRight: '1.25rem',
+                  paddingTop: '0.625rem',
+                  paddingBottom: '0.625rem',
+                  fontWeight: 600,
+                  fontSize: '0.875rem',
+                  ...(card.variant === 'primary'
                     ? { backgroundColor: '#9945FF', color: '#FFFFFF' }
                     : {
                         backgroundColor: 'rgba(255,255,255,0.1)',
                         color: '#FFFFFF',
                         border: '1px solid rgba(255,255,255,0.2)',
-                      }
-                }
+                      }),
+                }}
                 onMouseEnter={(e) =>
                   (e.currentTarget.style.filter = 'brightness(1.15)')
                 }

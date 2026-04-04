@@ -6,16 +6,22 @@ interface StatPillProps {
 export default function StatPill({ value, label }: StatPillProps) {
   return (
     <div
-      className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full"
+      className="inline-flex items-center"
       style={{
+        gap: '0.5rem',
+        paddingLeft: '1rem',
+        paddingRight: '1rem',
+        paddingTop: '0.375rem',
+        paddingBottom: '0.375rem',
+        borderRadius: '9999px',
         backgroundColor: 'var(--surface-2)',
         border: '1px solid var(--border-subtle)',
       }}
     >
-      <span className="font-bold text-sm" style={{ color: 'var(--color-brand-yellow)' }}>
+      <span style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--color-brand-yellow)' }}>
         {value}
       </span>
-      <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+      <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
         {label}
       </span>
     </div>

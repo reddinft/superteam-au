@@ -65,23 +65,29 @@ export default function NavBar() {
           borderBottom: scrolled ? '1px solid var(--border-subtle)' : 'none',
         }}
       >
-        <div className="container flex items-center justify-between h-16">
+        <div className="container flex items-center justify-between" style={{ height: '4rem' }}>
           {/* Logo */}
-          <a href="/" className="flex items-center gap-1 font-bold text-lg tracking-tight">
+          <a
+            href="/"
+            className="flex items-center font-bold tracking-tight"
+            style={{ gap: '0.25rem', fontSize: '1.125rem' }}
+          >
             <span style={{ color: 'var(--color-brand-yellow)' }}>SUPERTEAM</span>
             <span style={{ color: 'var(--text-primary)' }}> AU</span>
           </a>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center" style={{ gap: '2rem' }}>
             {NAV_LINKS.map((link) => {
               const isActive = activeSection === link.id
               return (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm transition-all duration-150 relative pb-1"
+                  className="transition-all duration-150 relative"
                   style={{
+                    fontSize: '0.875rem',
+                    paddingBottom: '0.25rem',
                     color: isActive ? 'var(--color-brand-purple)' : 'var(--text-secondary)',
                     borderBottom: isActive ? '2px solid var(--color-brand-purple)' : '2px solid transparent',
                   }}
@@ -103,15 +109,15 @@ export default function NavBar() {
           </div>
 
           {/* CTA + hamburger */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center" style={{ gap: '0.75rem' }}>
             <div className="hidden md:block">
               <Button variant="primary" size="sm" href="https://discord.gg/superteamau">
                 Join Now
               </Button>
             </div>
             <button
-              className="md:hidden p-2 rounded-lg transition-colors"
-              style={{ color: 'var(--text-primary)' }}
+              className="md:hidden rounded-lg transition-colors"
+              style={{ color: 'var(--text-primary)', padding: '0.5rem' }}
               onClick={() => setMobileOpen(true)}
               aria-label="Open menu"
             >
