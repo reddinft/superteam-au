@@ -46,7 +46,7 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
           <button
             key={f.value}
             onClick={() => setFilter(f.value)}
-            className="flex-shrink-0 px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-150 cursor-pointer"
+            className="flex-shrink-0 px-5 py-2 rounded-full text-sm font-medium transition-all duration-150 cursor-pointer"
             style={
               filter === f.value
                 ? {
