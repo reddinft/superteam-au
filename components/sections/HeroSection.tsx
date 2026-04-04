@@ -105,11 +105,11 @@ export default function HeroSection({ headline, subheadline, statPills, joinUrl 
               {headline ?? <>
                   Australia&apos;s Home for Solana Builders{' '}
                   <img
-                    src="/images/au-flag.png"
+                    src="/images/au-flag.svg"
                     alt="Australian flag"
-                    width={40}
-                    height={27}
-                    style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.15em', borderRadius: '2px' }}
+                    width={48}
+                    height={24}
+                    style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.2em', borderRadius: '3px', boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
                   />
                 </>}
             </motion.h1>
