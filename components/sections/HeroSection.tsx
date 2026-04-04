@@ -101,7 +101,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
                 backgroundClip: 'text',
               }}
             >
-              {headline ?? "Australia's Home for Solana Builders 🇦🇺"}
+              {headline ?? <>Australia&apos;s Home for Solana Builders <span style={{ WebkitTextFillColor: 'initial', backgroundClip: 'initial' }}>🇦🇺</span></>}
             </motion.h1>
 
             {/* Sub */}
