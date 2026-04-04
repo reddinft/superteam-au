@@ -14,7 +14,7 @@
   --color-accent-cyan: #00C2FF;
 
   /* ── Font Tokens ── */
-  --font-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-body: 'JetBrains Mono', 'Courier New', monospace;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
   /* ── Surface / Background Tokens ── */
