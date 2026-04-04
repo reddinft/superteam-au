@@ -53,6 +53,19 @@ To edit content via a UI, run `pnpm dev` and visit `/keystatic`.
 
 On Vercel (production), content is managed by committing directly to the `content/` directory.
 
+## Content Pipeline — AI-Assisted with Keystatic
+
+The site uses [Keystatic](https://keystatic.com/) in GitHub mode for content management. This enables a PR-based content approval workflow:
+
+1. **Content is drafted** — by community members, an AI assistant, or the site admin via `/keystatic`
+2. **A branch + PR is created automatically** — Keystatic commits the new `.mdoc` file to a feature branch and opens a GitHub PR
+3. **Review and edit** — the PR can be reviewed, edited, and discussed in GitHub before merging
+4. **Merge = deploy** — once merged to `main`, Vercel auto-deploys within ~60 seconds
+
+This means anyone in the community can contribute a blog post, event, or project listing — and it goes through the same code review process as any other change. No CMS vendor lock-in, no monthly fees, full Git history on every content change.
+
+> **Demo:** The blog posts by [@metasal](https://x.com/metasal) on this site were AI-expanded from his public tweets and added via this exact workflow — demonstrating how the pipeline works end-to-end.
+
 ## Architecture notes
 
 - Server components handle all Keystatic Reader API calls

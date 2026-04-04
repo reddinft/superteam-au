@@ -113,7 +113,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
                 color: 'var(--text-secondary)',
               }}
             >
-              {subheadline ?? 'We accelerate founders, builders, creatives and institutions driving internet capital markets on Solana.'}
+              {subheadline ?? '120 members across Sydney, Melbourne, Brisbane, Perth and beyond — building DeFi, DePIN, and the next generation of internet finance on Solana.'}
             </motion.p>
 
             {/* CTAs */}
@@ -137,8 +137,8 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               style={{ gap: '0.75rem' }}
             >
               {(statPills ?? [
-                { value: '23+', label: 'Members' },
-                { value: '24+', label: 'Events' },
+                { value: '120+', label: 'Members' },
+                { value: '30+', label: 'Events' },
                 { value: '$50K+', label: 'Earned' },
               ]).map((pill) => (
                 <StatPill key={pill.label} value={pill.value} label={pill.label} />
