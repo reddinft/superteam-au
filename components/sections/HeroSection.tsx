@@ -98,8 +98,8 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             {/* Stat Pills */}
             <motion.div {...fadeUp(400)} className="flex flex-wrap gap-3">
               {(statPills ?? [
-                { value: '120+', label: 'Members' },
-                { value: '20+', label: 'Events' },
+                { value: '23', label: 'Members' },
+                { value: '24', label: 'Events' },
                 { value: '$50K+', label: 'Earned' },
               ]).map((pill) => (
                 <StatPill key={pill.label} value={pill.value} label={pill.label} />
