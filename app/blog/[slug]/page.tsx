@@ -43,45 +43,94 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <main className="min-h-screen" style={{ backgroundColor: 'var(--surface-0)' }}>
-      <div className="container max-w-3xl pt-28 pb-16">
-        {/* Category */}
-        <p
-          className="text-xs font-semibold uppercase tracking-widest mb-4"
-          style={{ color: 'var(--color-brand-yellow)' }}
-        >
-          {post.category.replace(/-/g, ' ')}
-        </p>
 
-        {/* Title */}
-        <h1
-          className="text-3xl md:text-4xl font-bold leading-tight mb-4"
-          style={{ color: 'var(--text-primary)' }}
-        >
-          {post.title}
-        </h1>
+      {/* Hero band */}
+      <div style={{
+        background: 'radial-gradient(ellipse at 50% 0%, rgba(85,34,224,0.18) 0%, transparent 70%)',
+        borderBottom: '1px solid var(--border-subtle)',
+        paddingTop: '7rem',
+        paddingBottom: '3rem',
+      }}>
+        <div className="container" style={{ maxWidth: '760px' }}>
+          {/* Category eyebrow */}
+          <p style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.7rem',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.15em',
+            color: 'var(--color-brand-yellow)',
+            marginBottom: '1rem',
+          }}>
+            {post.category.replace(/-/g, ' ')}
+          </p>
 
-        {/* Meta */}
-        <div className="flex items-center gap-4 mb-8 pb-8" style={{ borderBottom: '1px solid var(--border-subtle)' }}>
-          {author && (
-            <div>
-              <p className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                {author.name}
-              </p>
-              <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
-                {author.role}
-              </p>
-            </div>
-          )}
-          {post.publishedAt && (
-            <p className="text-sm ml-auto" style={{ color: 'var(--text-tertiary)' }}>
-              {formatDate(post.publishedAt)}
+          {/* Title */}
+          <h1 style={{
+            fontFamily: "'Space Grotesk', system-ui, sans-serif",
+            fontSize: 'clamp(1.75rem, 4vw, 2.75rem)',
+            fontWeight: 800,
+            lineHeight: 1.2,
+            letterSpacing: '-0.02em',
+            color: 'var(--text-primary)',
+            marginBottom: '1.5rem',
+          }}>
+            {post.title}
+          </h1>
+
+          {/* Excerpt */}
+          {post.excerpt && (
+            <p style={{
+              fontFamily: "'Space Grotesk', system-ui, sans-serif",
+              fontSize: '1.125rem',
+              lineHeight: 1.6,
+              color: 'var(--text-secondary)',
+              marginBottom: '1.75rem',
+            }}>
+              {post.excerpt}
             </p>
           )}
+
+          {/* Author + date */}
+          <div className="flex items-center gap-4" style={{ paddingTop: '1.25rem', borderTop: '1px solid var(--border-subtle)' }}>
+            {author && (
+              <div>
+                <p style={{ fontSize: '0.9rem', fontWeight: 600, color: 'var(--text-primary)', fontFamily: "'Space Grotesk', sans-serif" }}>
+                  {author.name}
+                </p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)' }}>
+                  {author.role}
+                </p>
+              </div>
+            )}
+            {post.publishedAt && (
+              <p className="ml-auto" style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)' }}>
+                {formatDate(post.publishedAt)}
+              </p>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Body */}
+      <div className="container pb-24" style={{ maxWidth: '760px', paddingTop: '3.5rem' }}>
+        <div className="prose-blog">
+          <DocumentRenderer document={body} />
         </div>
 
-        {/* Body */}
-        <div className="prose prose-invert max-w-none" style={{ color: 'var(--text-secondary)' }}>
-          <DocumentRenderer document={body} />
+        {/* Back link */}
+        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border-subtle)' }}>
+          <a
+            href="/blog"
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.875rem',
+              color: 'var(--text-tertiary)',
+              textDecoration: 'none',
+            }}
+          >
+            ← Back to Blog
+          </a>
         </div>
       </div>
     </main>
