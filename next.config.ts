@@ -1,10 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   turbopack: {
-    // Turbopack root — set explicitly to silence workspace lockfile warning
     root: __dirname,
+  },
+  // Explicitly include content directory in serverless function bundle
+  // so Keystatic reader can access JSON files at runtime on Vercel
+  outputFileTracingIncludes: {
+    '/**': ['./content/**/*'],
   },
 };
 
