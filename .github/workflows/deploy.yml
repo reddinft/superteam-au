@@ -1,4 +1,7 @@
-name: Deploy to Vercel
+# Vercel auto-deploys on push via native GitHub integration.
+# This workflow is kept as a no-op placeholder.
+# All changes go through PRs — Nissan merges to main to trigger production deploy.
+name: Deploy (via Vercel GitHub Integration)
 
 on:
   push:
@@ -6,20 +9,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  noop:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Deploy to Vercel Production
-        run: |
-          vercel deploy --prod --yes \
-            --token ${{ secrets.VERCEL_TOKEN }} \
-            --scope nissan-dookerans-projects-0352048f
-        env:
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_ORG_ID: team_kd9pdxIV8GdioK77iNBZWgSJ
-          VERCEL_PROJECT_ID: prj_7TNHuLTI6eqnhs08XMEpLWUCnqG9
+      - run: echo "Vercel deploys automatically via GitHub integration on merge to main."
