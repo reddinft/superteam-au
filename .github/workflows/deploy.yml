@@ -1,0 +1,25 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy to Vercel Production
+        run: |
+          vercel deploy --prod --yes \
+            --token ${{ secrets.VERCEL_TOKEN }} \
+            --scope nissan-dookerans-projects-0352048f
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: team_kd9pdxIV8GdioK77iNBZWgSJ
+          VERCEL_PROJECT_ID: prj_7TNHuLTI6eqnhs08XMEpLWUCnqG9
