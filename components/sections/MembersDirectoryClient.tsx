@@ -92,20 +92,19 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
           <button
             key={g.value}
             onClick={() => setSelectedGuild(g.value)}
-            className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-150 cursor-pointer"
-            style={
-              selectedGuild === g.value
-                ? {
-                    backgroundColor: 'var(--color-brand-purple)',
-                    color: '#fff',
-                    border: '1.5px solid var(--color-brand-purple)',
-                  }
-                : {
-                    backgroundColor: 'transparent',
-                    color: 'var(--text-secondary)',
-                    border: '1.5px solid var(--border-default)',
-                  }
-            }
+            style={{
+              padding: '8px 18px',
+              borderRadius: '9999px',
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              transition: 'all 0.15s ease',
+              ...(selectedGuild === g.value
+                ? { backgroundColor: 'var(--color-brand-purple)', color: '#fff', border: '1.5px solid var(--color-brand-purple)' }
+                : { backgroundColor: 'transparent', color: 'var(--text-secondary)', border: '1.5px solid var(--border-default)' }
+              )
+            }}
           >
             {g.label}
           </button>

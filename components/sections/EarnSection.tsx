@@ -69,11 +69,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
               href={earnUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base transition-all duration-150 whitespace-nowrap"
-              style={{
-                backgroundColor: '#14F195',
-                color: '#0A0A12',
-              }}
+              style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', padding:'12px 32px', borderRadius:'12px', fontWeight:600, fontSize:'1rem', transition:'all 0.15s ease', whiteSpace:'nowrap', backgroundColor:'#14F195', color:'#0A0A12' }}
               onMouseEnter={(e) => (e.currentTarget.style.filter = 'brightness(1.1)')}
               onMouseLeave={(e) => (e.currentTarget.style.filter = '')}
             >
@@ -83,13 +79,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
               href={earnUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3.5 rounded-xl font-semibold text-base transition-all duration-150 whitespace-nowrap"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.15)',
-                color: '#FFFFFF',
-                border: '1.5px solid rgba(255,255,255,0.3)',
-                backdropFilter: 'blur(8px)',
-              }}
+              style={{ display:'inline-flex', alignItems:'center', justifyContent:'center', padding:'12px 32px', borderRadius:'12px', fontWeight:600, fontSize:'1rem', transition:'all 0.15s ease', whiteSpace:'nowrap', backgroundColor:'rgba(255,255,255,0.15)', color:'#FFFFFF', border:'1.5px solid rgba(255,255,255,0.3)', backdropFilter:'blur(8px)' }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.25)')}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.15)')}
             >
