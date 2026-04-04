@@ -86,7 +86,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             </motion.p>
 
             {/* CTAs */}
-            <motion.div {...fadeUp(300)} className="flex flex-wrap gap-4">
+            <motion.div {...fadeUp(300)} className="flex flex-wrap gap-3 items-center">
               <Button variant="primary" size="md" href="https://discord.gg/superteamau">
                 Join the Community
               </Button>

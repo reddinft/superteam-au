@@ -17,7 +17,7 @@ interface ButtonProps {
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: 'px-4 py-2 text-sm',
-  md: 'px-6 py-3 text-base',
+  md: 'px-5 py-2.5 text-sm md:px-6 md:py-3 md:text-base',
   lg: 'px-8 py-4 text-lg',
 }
 
@@ -48,7 +48,7 @@ export default function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const baseClass = `inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-150 cursor-pointer ${sizeClasses[size]} ${className}`
+  const baseClass = `inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${sizeClasses[size]} ${className}`
 
   const style = variantStyles[variant]
 
