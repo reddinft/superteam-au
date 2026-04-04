@@ -3,6 +3,14 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import ProjectCard from '@/components/cards/ProjectCard'
+import ProjectModal from '@/components/ui/ProjectModal'
+
+interface Author {
+  name: string
+  twitterUrl?: string | null
+  telegramUsername?: string | null
+  xUrl?: string | null
+}
 
 interface ProjectItem {
   slug: string
@@ -13,7 +21,9 @@ interface ProjectItem {
     url?: string | null
     featured?: boolean
   }
+  authors: Author[]
   authorNames: string[]
+  url?: string | null
 }
 
 interface ProjectsSectionClientProps {
@@ -32,6 +42,7 @@ const FILTERS = [
 
 export default function ProjectsSectionClient({ projects }: ProjectsSectionClientProps) {
   const [filter, setFilter] = useState<string>('all')
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null)
 
   const filtered = filter === 'all' ? projects : projects.filter((p) => p.entry.category === filter)
 
@@ -88,11 +99,25 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
                 url={p.entry.url}
                 authorNames={p.authorNames}
                 featured={p.entry.featured}
+                onClick={() => setSelectedProject(p)}
               />
             </motion.div>
           ))}
         </AnimatePresence>
       </div>
+
+      {selectedProject && (
+        <ProjectModal
+          project={{
+            title: selectedProject.entry.title,
+            description: selectedProject.entry.description,
+            category: selectedProject.entry.category,
+            url: selectedProject.url ?? selectedProject.entry.url,
+            authors: selectedProject.authors ?? [],
+          }}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
 
       {filtered.length === 0 && (
         <p className="text-center" style={{ paddingTop: '3rem', paddingBottom: '3rem', color: 'var(--text-tertiary)' }}>
