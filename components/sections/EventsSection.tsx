@@ -33,11 +33,11 @@ export default async function EventsSection() {
   return (
     <section id="events" className="section-padding" style={{ backgroundColor: 'var(--surface-0)' }}>
       <div className="container">
-        <div className="mb-12">
+        <div style={{ marginBottom: '3rem' }}>
           <SectionHeader eyebrow="EVENTS" title="What&apos;s On" align="left" />
         </div>
         <EventsSectionClient upcomingEvents={upcoming} pastEvents={past} />
-        <div className="mt-8 flex justify-center">
+        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
           <Button variant="ghost" size="md" href="https://lu.ma/solanaanz">
             See All Events →
           </Button>

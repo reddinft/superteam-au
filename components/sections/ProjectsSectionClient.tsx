@@ -39,8 +39,8 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
     <div>
       {/* Filter pills */}
       <div
-        className="flex gap-2 mb-8 overflow-x-auto pb-2"
-        style={{ scrollbarWidth: 'none' }}
+        className="flex overflow-x-auto"
+        style={{ gap: '0.5rem', marginBottom: '2rem', paddingBottom: '0.5rem', scrollbarWidth: 'none' }}
       >
         {FILTERS.map((f) => (
           <button
@@ -67,7 +67,10 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        style={{ gap: '1.25rem' }}
+      >
         <AnimatePresence mode="popLayout">
           {filtered.map((p) => (
             <motion.div
@@ -92,7 +95,7 @@ export default function ProjectsSectionClient({ projects }: ProjectsSectionClien
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center py-12" style={{ color: 'var(--text-tertiary)' }}>
+        <p className="text-center" style={{ paddingTop: '3rem', paddingBottom: '3rem', color: 'var(--text-tertiary)' }}>
           No projects in this category yet.
         </p>
       )}

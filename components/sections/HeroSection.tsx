@@ -62,15 +62,27 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
 
-      <div className="container relative z-10 pt-24 pb-16">
-        <div className="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-8">
+      <div className="container relative z-10" style={{ paddingTop: '6rem', paddingBottom: '4rem' }}>
+        <div
+          className="flex flex-col-reverse md:flex-row items-center"
+          style={{ gap: '3rem' }}
+        >
           {/* Left — content (60%) */}
-          <div className="flex-1 md:w-[60%] flex flex-col gap-6">
+          <div
+            className="flex-1 md:w-[60%] flex flex-col"
+            style={{ gap: '1.5rem' }}
+          >
             {/* Eyebrow */}
             <motion.p
               {...fadeUp(0)}
-              className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: 'var(--color-brand-yellow)', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
+              style={{
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                textTransform: 'uppercase',
+                color: 'var(--color-brand-yellow)',
+                fontFamily: 'var(--font-mono)',
+                letterSpacing: '0.15em',
+              }}
             >
               SUPERTEAM AUSTRALIA
             </motion.p>
@@ -78,13 +90,15 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             {/* H1 */}
             <motion.h1
               {...fadeUp(100)}
-              className="text-[40px] md:text-5xl lg:text-7xl font-extrabold leading-tight"
               style={{
+                fontSize: 'clamp(2.25rem, 5vw, 4.5rem)',
+                fontWeight: 800,
+                lineHeight: 1.1,
+                letterSpacing: '-0.02em',
                 background: 'linear-gradient(to right, #a78bfa, #c4b5fd, #5eead4)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
-                letterSpacing: '-0.02em',
               }}
             >
               {headline ?? "Australia's Home for Solana Builders 🇦🇺"}
@@ -93,14 +107,21 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             {/* Sub */}
             <motion.p
               {...fadeUp(200)}
-              className="text-lg md:text-xl max-w-xl"
-              style={{ color: 'var(--text-secondary)' }}
+              style={{
+                fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                maxWidth: '36rem',
+                color: 'var(--text-secondary)',
+              }}
             >
               {subheadline ?? 'We accelerate founders, builders, creatives and institutions driving internet capital markets on Solana.'}
             </motion.p>
 
             {/* CTAs */}
-            <motion.div {...fadeUp(300)} className="flex flex-wrap gap-3 items-center">
+            <motion.div
+              {...fadeUp(300)}
+              className="flex flex-wrap items-center"
+              style={{ gap: '0.75rem' }}
+            >
               <Button variant="primary" size="md" href="https://discord.gg/superteamau">
                 Get Involved
               </Button>
@@ -110,7 +131,11 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             </motion.div>
 
             {/* Stat Pills */}
-            <motion.div {...fadeUp(400)} className="flex flex-wrap gap-3">
+            <motion.div
+              {...fadeUp(400)}
+              className="flex flex-wrap"
+              style={{ gap: '0.75rem' }}
+            >
               {(statPills ?? [
                 { value: '23+', label: 'Members' },
                 { value: '24+', label: 'Events' },

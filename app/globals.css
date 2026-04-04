@@ -191,34 +191,34 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-5);
-  padding-right: var(--space-5);
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding-left: var(--space-8);
-    padding-right: var(--space-8);
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 }
 
 @media (min-width: 1280px) {
   .container {
-    padding-left: var(--space-10);
-    padding-right: var(--space-10);
+    padding-left: 5rem;
+    padding-right: 5rem;
   }
 }
 
 /* ── Section padding ── */
 .section-padding {
-  padding-top: var(--space-8);
-  padding-bottom: var(--space-8);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding-top: var(--space-11);
-    padding-bottom: var(--space-11);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
   }
 }
 

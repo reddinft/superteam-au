@@ -76,8 +76,14 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
         placeholder="Search builders..."
         value={searchQuery}
         onChange={(e) => handleSearch(e.target.value)}
-        className="w-full rounded-lg px-4 py-2.5 mb-6 text-sm outline-none"
+        className="w-full rounded-lg outline-none"
         style={{
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
+          paddingTop: '0.625rem',
+          paddingBottom: '0.625rem',
+          marginBottom: '1.5rem',
+          fontSize: '0.875rem',
           backgroundColor: 'var(--surface-2)',
           border: '1.5px solid var(--border-subtle)',
           color: 'var(--text-primary)',
@@ -87,7 +93,7 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
       />
 
       {/* Guild filter */}
-      <div className="flex gap-2 mb-4 flex-wrap">
+      <div className="flex flex-wrap" style={{ gap: '0.5rem', marginBottom: '1rem' }}>
         {GUILDS.map((g) => (
           <button
             key={g.value}
@@ -112,12 +118,17 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
       </div>
 
       {/* City filter */}
-      <div className="flex items-center gap-4 mb-8">
+      <div className="flex items-center" style={{ gap: '1rem', marginBottom: '2rem' }}>
         <select
           value={selectedCity}
           onChange={(e) => setSelectedCity(e.target.value)}
-          className="rounded-lg px-3 py-2 text-sm cursor-pointer outline-none"
+          className="rounded-lg cursor-pointer outline-none"
           style={{
+            paddingLeft: '0.75rem',
+            paddingRight: '0.75rem',
+            paddingTop: '0.5rem',
+            paddingBottom: '0.5rem',
+            fontSize: '0.875rem',
             backgroundColor: 'var(--surface-2)',
             border: '1.5px solid var(--border-subtle)',
             color: 'var(--text-secondary)',
@@ -130,20 +141,23 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
           ))}
         </select>
 
-        <p className="text-sm" style={{ color: 'var(--text-tertiary)' }}>
+        <p style={{ fontSize: '0.875rem', color: 'var(--text-tertiary)' }}>
           Showing <span style={{ color: 'var(--text-primary)' }}>{filtered.length}</span> of {members.length} builders
         </p>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+        style={{ gap: '1rem' }}
+      >
         {filtered.map((m) => (
           <MemberCard key={m.slug} {...m.entry} />
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-center py-12" style={{ color: 'var(--text-tertiary)' }}>
+        <p className="text-center" style={{ paddingTop: '3rem', paddingBottom: '3rem', color: 'var(--text-tertiary)' }}>
           No builders match your search.
         </p>
       )}

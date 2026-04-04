@@ -15,21 +15,31 @@ export default async function PartnersStrip() {
 
   return (
     <section
-      className="py-10 overflow-hidden"
+      className="overflow-hidden"
       style={{
+        paddingTop: '2.5rem',
+        paddingBottom: '2.5rem',
         backgroundColor: 'var(--surface-2)',
         borderTop: '1px solid var(--border-subtle)',
         borderBottom: '1px solid var(--border-subtle)',
       }}
     >
       <p
-        className="text-xs font-semibold uppercase tracking-widest text-center mb-6"
-        style={{ color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
+        style={{
+          fontSize: '0.75rem',
+          fontWeight: 600,
+          textTransform: 'uppercase',
+          textAlign: 'center',
+          marginBottom: '1.5rem',
+          color: 'var(--text-tertiary)',
+          fontFamily: 'var(--font-mono)',
+          letterSpacing: '0.15em',
+        }}
       >
         BACKED BY
       </p>
       <PartnersStripClient partners={sorted} />
-      <div className="flex justify-center mt-6">
+      <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
         <Button variant="ghost" size="md" href="mailto:au@superteam.fun">
           Become a Partner →
         </Button>

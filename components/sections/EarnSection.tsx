@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Button from '@/components/ui/Button'
 
 interface EarnSectionProps {
   earnUrl?: string
@@ -40,15 +39,28 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
       {/* Content */}
       <div className="container relative z-10">
         <motion.div
-          className="flex flex-col items-center gap-6 text-center max-w-2xl mx-auto"
+          className="flex flex-col items-center text-center"
+          style={{ gap: '1.5rem', maxWidth: '42rem', marginLeft: 'auto', marginRight: 'auto' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
           <span
-            className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-            style={{ backgroundColor: 'rgba(20,241,149,0.15)', color: '#14F195', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
+            style={{
+              fontSize: '0.75rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              paddingLeft: '0.75rem',
+              paddingRight: '0.75rem',
+              paddingTop: '0.25rem',
+              paddingBottom: '0.25rem',
+              borderRadius: '9999px',
+              backgroundColor: 'rgba(20,241,149,0.15)',
+              color: '#14F195',
+              fontFamily: 'var(--font-mono)',
+            }}
           >
             OPPORTUNITIES
           </span>
@@ -64,7 +76,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
             Find bounties, grants, and paid opportunities from top Solana protocols.
           </p>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap justify-center" style={{ gap: '1rem' }}>
             <a
               href={earnUrl}
               target="_blank"

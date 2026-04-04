@@ -14,11 +14,14 @@ export default async function BlogPreview() {
   return (
     <section id="blog" className="section-padding" style={{ backgroundColor: 'var(--surface-1)' }}>
       <div className="container">
-        <div className="mb-12">
+        <div style={{ marginBottom: '3rem' }}>
           <SectionHeader eyebrow="BLOG" title="From the Community" align="left" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{ gap: '1.5rem' }}
+        >
           {sorted.map((p) => (
             <BlogCard
               key={p.slug}
@@ -32,7 +35,7 @@ export default async function BlogPreview() {
           ))}
         </div>
 
-        <div className="text-center mt-10">
+        <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
           <Button variant="secondary" size="md" href="/blog">
             View All Posts →
           </Button>

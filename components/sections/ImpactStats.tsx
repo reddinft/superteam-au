@@ -34,7 +34,6 @@ export default function ImpactStats({
         style={{
           height: '2px',
           background: 'linear-gradient(90deg, transparent 0%, #5522E0 50%, transparent 100%)',
-          marginBottom: '0',
           position: 'absolute',
           left: 0,
           right: 0,
@@ -48,7 +47,7 @@ export default function ImpactStats({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          style={{ marginBottom: '2.5rem' }}
         >
           <SectionHeader
             eyebrow="IMPACT"
@@ -56,7 +55,10 @@ export default function ImpactStats({
             align="center"
           />
         </motion.div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div
+          className="grid grid-cols-2 md:grid-cols-4"
+          style={{ gap: '1rem' }}
+        >
           {STATS.map((stat, i) => (
             <motion.div
               key={stat.label}

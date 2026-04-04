@@ -30,11 +30,11 @@ export default async function ProjectsSection() {
   return (
     <section id="projects" className="section-padding" style={{ backgroundColor: 'var(--surface-1)' }}>
       <div className="container">
-        <div className="mb-12">
+        <div style={{ marginBottom: '3rem' }}>
           <SectionHeader eyebrow="PROJECTS" title="What We're Building" align="left" />
         </div>
         <ProjectsSectionClient projects={projectsWithAuthors} />
-        <div className="mt-8 flex justify-center">
+        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
           <Button variant="ghost" size="md" href="https://superteam.fun/earn">
             Submit Your Project →
           </Button>

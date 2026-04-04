@@ -25,11 +25,11 @@ export default async function MembersDirectory() {
   return (
     <section id="members" className="section-padding" style={{ backgroundColor: 'var(--surface-0)' }}>
       <div className="container">
-        <div className="mb-12">
+        <div style={{ marginBottom: '3rem' }}>
           <SectionHeader eyebrow="THE COMMUNITY" title="Australian Builders" align="left" />
         </div>
         <MembersDirectoryClient members={memberData} />
-        <div className="mt-8 flex justify-center">
+        <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
           <Button variant="ghost" size="md" href="https://discord.gg/superteamau">
             Add Your Profile →
           </Button>

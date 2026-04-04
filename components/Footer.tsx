@@ -27,24 +27,27 @@ export default function Footer() {
         borderTop: '1px solid var(--border-subtle)',
       }}
     >
-      <div className="container py-12 md:py-16">
+      <div className="container" style={{ paddingTop: '3rem', paddingBottom: '4rem' }}>
         {/* 3-column grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
+        <div
+          className="grid grid-cols-1 md:grid-cols-3"
+          style={{ gap: '2.5rem' }}
+        >
           {/* Column 1 — Brand */}
-          <div className="flex flex-col gap-4">
-            <div className="font-bold text-xl tracking-tight">
+          <div className="flex flex-col" style={{ gap: '1rem' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.25rem', letterSpacing: '-0.02em' }}>
               <span style={{ color: 'var(--color-brand-yellow)' }}>SUPERTEAM</span>
               <span style={{ color: 'var(--text-primary)' }}> AU</span>
             </div>
-            <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+            <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
               Building Australia&apos;s Solana Future
             </p>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex items-center" style={{ gap: '0.75rem', marginTop: '0.5rem' }}>
               <a
                 href="https://twitter.com/SuperteamAU"
                 aria-label="X / Twitter"
-                className="p-2 rounded-lg transition-colors"
-                style={{ color: 'var(--text-tertiary)' }}
+                className="rounded-lg transition-colors"
+                style={{ color: 'var(--text-tertiary)', padding: '0.5rem' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-tertiary)')}
               >
@@ -56,8 +59,8 @@ export default function Footer() {
               <a
                 href="https://discord.gg/superteamau"
                 aria-label="Discord"
-                className="p-2 rounded-lg transition-colors"
-                style={{ color: 'var(--text-tertiary)' }}
+                className="rounded-lg transition-colors"
+                style={{ color: 'var(--text-tertiary)', padding: '0.5rem' }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                 onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-tertiary)')}
               >
@@ -67,17 +70,17 @@ export default function Footer() {
           </div>
 
           {/* Column 2 — Explore */}
-          <div className="flex flex-col gap-4">
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
+          <div className="flex flex-col" style={{ gap: '1rem' }}>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-tertiary)' }}>
               Explore
             </p>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col" style={{ gap: '0.75rem' }}>
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
+                  className="transition-colors"
+                  style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                 >
@@ -88,17 +91,17 @@ export default function Footer() {
           </div>
 
           {/* Column 3 — Connect */}
-          <div className="flex flex-col gap-4">
-            <p className="text-xs font-semibold uppercase tracking-widest" style={{ color: 'var(--text-tertiary)' }}>
+          <div className="flex flex-col" style={{ gap: '1rem' }}>
+            <p style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-tertiary)' }}>
               Connect
             </p>
-            <nav className="flex flex-col gap-3">
+            <nav className="flex flex-col" style={{ gap: '0.75rem' }}>
               {COMMUNITY_LINKS.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="text-sm transition-colors"
-                  style={{ color: 'var(--text-secondary)' }}
+                  className="transition-colors"
+                  style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                 >
@@ -111,20 +114,21 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div
-          className="flex items-center justify-between mt-10 pt-8"
-          style={{ borderTop: '1px solid var(--border-subtle)' }}
+          className="flex items-center justify-between"
+          style={{ borderTop: '1px solid var(--border-subtle)', marginTop: '2.5rem', paddingTop: '2rem' }}
         >
-          <p className="text-xs" style={{ color: 'var(--text-tertiary)' }}>
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>
             © {new Date().getFullYear()} Superteam Australia. Part of the global Superteam network.
           </p>
           {/* Hidden easter egg trigger */}
           <button
             id="southern-cross-trigger"
             title="Southern Cross — AU terminal"
-            className="transition-opacity cursor-pointer p-1 rounded bg-transparent border-none"
+            className="transition-opacity cursor-pointer rounded bg-transparent border-none"
             style={{
               opacity: 0.2,
               color: 'var(--color-brand-yellow)',
+              padding: '0.25rem',
             }}
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.6')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.2')}
