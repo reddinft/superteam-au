@@ -1,7 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MessageCircle, Hash, AtSign } from 'lucide-react'
+import { MessageCircle, Hash, Zap } from 'lucide-react'
+import { useState } from 'react'
 
 interface JoinCard {
   icon: React.ReactNode
@@ -18,14 +19,21 @@ interface JoinSectionProps {
 }
 
 export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProps = {}) {
-  const CARDS: JoinCard[] = [
+  const [toast, setToast] = useState('')
+
+  function showToast(label: string) {
+    setToast(label)
+    setTimeout(() => setToast(''), 2500)
+  }
+
+  const CARDS = [
     {
       icon: <MessageCircle size={28} />,
       title: 'Telegram',
       description: 'Our main community hub. Daily conversations, opportunities and builder updates.',
       cta: 'Join Telegram →',
-      href: telegramUrl ?? 'https://t.me/superteamaustralia',
-      variant: 'primary',
+      href: telegramUrl ?? null,
+      variant: 'primary' as const,
     },
     {
       icon: <Hash size={28} />,
@@ -33,15 +41,15 @@ export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProp
       description: 'Follow for ecosystem updates, builder wins and opportunities.',
       cta: 'Follow @SuperteamAU →',
       href: twitterUrl ?? 'https://x.com/SuperteamAU',
-      variant: 'secondary',
+      variant: 'secondary' as const,
     },
     {
-      icon: <AtSign size={28} />,
-      title: 'Twitter / X',
-      description: 'Follow for events, announcements and ecosystem news.',
-      cta: 'Follow @SuperteamAU →',
-      href: twitterUrl ?? 'https://twitter.com/SuperteamAU',
-      variant: 'secondary',
+      icon: <Zap size={28} />,
+      title: 'Superteam Earn',
+      description: 'Find bounties, grants and jobs in the Solana ecosystem.',
+      cta: 'Browse Opportunities →',
+      href: 'https://superteam.fun/earn',
+      variant: 'secondary' as const,
     },
   ]
   return (
@@ -65,6 +73,19 @@ export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProp
         }}
       />
 
+      {/* Global Coming Soon toast */}
+      {toast && (
+        <div style={{
+          position: 'fixed', top: '5rem', left: '50%', transform: 'translateX(-50%)',
+          background: 'rgba(10,10,18,0.97)', border: '1px solid rgba(153,69,255,0.6)',
+          color: '#fff', fontSize: '0.9rem', fontWeight: 600,
+          padding: '0.6rem 1.25rem', borderRadius: '8px',
+          boxShadow: '0 4px 24px rgba(85,34,224,0.4)', zIndex: 9999,
+          pointerEvents: 'none',
+        }}>
+          🚧 {toast} coming soon — stay tuned!
+        </div>
+      )}
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -174,9 +195,10 @@ export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProp
 
               {/* CTA */}
               <a
-                href={card.href}
-                target="_blank"
+                href={card.href ?? '#'}
+                target={card.href ? '_blank' : undefined}
                 rel="noopener noreferrer"
+                onClick={card.href ? undefined : (e) => { e.preventDefault(); showToast(card.title) }}
                 className="inline-flex items-center justify-center rounded-xl transition-all duration-150 whitespace-nowrap"
                 style={{
                   paddingLeft: '1.25rem',
@@ -185,6 +207,7 @@ export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProp
                   paddingBottom: '0.625rem',
                   fontWeight: 600,
                   fontSize: '0.875rem',
+                  cursor: card.href ? 'pointer' : 'default',
                   ...(card.variant === 'primary'
                     ? { backgroundColor: '#9945FF', color: '#FFFFFF' }
                     : {
@@ -198,7 +221,7 @@ export default function JoinSection({ telegramUrl, twitterUrl }: JoinSectionProp
                 }
                 onMouseLeave={(e) => (e.currentTarget.style.filter = '')}
               >
-                {card.cta}
+                {card.href ? card.cta : '🚧 Coming Soon'}
               </a>
             </motion.div>
           ))}

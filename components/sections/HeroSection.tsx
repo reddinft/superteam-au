@@ -89,28 +89,31 @@ export default function HeroSection({ headline, subheadline, statPills, joinUrl 
             </motion.p>
 
             {/* H1 */}
-            <motion.h1
-              {...fadeUp(100)}
-              style={{
-                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
-                fontWeight: 800,
-                lineHeight: 1.1,
-                letterSpacing: '-0.02em',
-                background: 'linear-gradient(to right, #a78bfa, #c4b5fd, #5eead4)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              {(headline ?? "Australia's Home for Solana Builders").replace(/[\u{1F1E0}-\u{1F1FF}\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}]/gu, '').trim()}{' '}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <motion.h1
+                {...fadeUp(100)}
+                style={{
+                  fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.02em',
+                  background: 'linear-gradient(to right, #a78bfa, #c4b5fd, #5eead4)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  margin: 0,
+                }}
+              >
+                {(headline ?? "Australia's Home for Solana Builders").replace(/[\u{1F1E0}-\u{1F1FF}\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}]/gu, '').trim()}
+              </motion.h1>
               <img
                 src="/images/au-flag.svg"
                 alt="Australian flag"
-                width={48}
-                height={24}
-                style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.2em', borderRadius: '3px', boxShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
+                width={56}
+                height={28}
+                style={{ borderRadius: '3px', boxShadow: '0 2px 8px rgba(0,0,0,0.5)', flexShrink: 0 }}
               />
-            </motion.h1>
+            </div>
 
             {/* Sub */}
             <motion.p
