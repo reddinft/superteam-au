@@ -56,7 +56,7 @@ export default function GuildsSection({ joinUrl }: GuildsSectionProps = {}) {
         </motion.div>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-stretch"
           style={{ gap: '1.5rem' }}
         >
           {GUILDS.map((guild, i) => (
@@ -66,6 +66,7 @@ export default function GuildsSection({ joinUrl }: GuildsSectionProps = {}) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
+              style={{ height: '100%' }}
             >
               <GuildCard {...guild} href={joinUrl ?? 'https://t.me/superteamaustralia'} />
             </motion.div>
