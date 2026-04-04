@@ -109,6 +109,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
                     backgroundClip: 'unset',
                     background: 'none',
                     display: 'inline-block',
+                    fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif',
                   }}>🇦🇺</span>
                 </>}
             </motion.h1>
