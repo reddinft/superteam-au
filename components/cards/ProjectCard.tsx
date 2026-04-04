@@ -67,7 +67,7 @@ export default function ProjectCard({
       <div className="flex items-center justify-between">
         <span
           style={{
-            fontSize: '0.75rem',
+            fontSize: '0.875rem',
             fontWeight: 600,
             paddingLeft: '0.625rem',
             paddingRight: '0.625rem',
@@ -121,7 +121,7 @@ export default function ProjectCard({
       {/* Authors */}
       {authorNames.length > 0 && (
         <p
-          style={{ fontSize: '0.75rem', marginTop: '0.75rem', color: 'var(--text-tertiary)' }}
+          style={{ fontSize: '0.875rem', marginTop: '0.75rem', color: 'var(--text-tertiary)' }}
         >
           by {authorNames.join(', ')}
         </p>

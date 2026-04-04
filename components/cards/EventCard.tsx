@@ -77,7 +77,7 @@ export default function EventCard({
           {day}
         </span>
         <span
-          style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem', color: 'var(--text-tertiary)' }}
+          style={{ fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem', color: 'var(--text-tertiary)' }}
         >
           {month}
         </span>
@@ -88,7 +88,7 @@ export default function EventCard({
         <div className="flex items-center flex-wrap" style={{ gap: '0.5rem' }}>
           <span
             style={{
-              fontSize: '0.75rem',
+              fontSize: '0.875rem',
               fontWeight: 600,
               paddingLeft: '0.5rem',
               paddingRight: '0.5rem',
@@ -138,7 +138,7 @@ export default function EventCard({
             ) : (
               <span
                 style={{
-                  fontSize: '0.75rem',
+                  fontSize: '0.875rem',
                   fontWeight: 600,
                   paddingLeft: '1rem',
                   paddingRight: '1rem',
