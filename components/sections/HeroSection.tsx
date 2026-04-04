@@ -103,14 +103,13 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             >
               {headline ?? <>
                   Australia&apos;s Home for Solana Builders{' '}
-                  <span style={{
-                    WebkitTextFillColor: 'unset',
-                    WebkitBackgroundClip: 'unset',
-                    backgroundClip: 'unset',
-                    background: 'none',
-                    display: 'inline-block',
-                    fontFamily: '"Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", "Twemoji Mozilla", sans-serif',
-                  }}>🇦🇺</span>
+                  <img
+                    src="/images/au-flag.png"
+                    alt="Australian flag"
+                    width={40}
+                    height={27}
+                    style={{ display: 'inline-block', verticalAlign: 'middle', marginBottom: '0.15em', borderRadius: '2px' }}
+                  />
                 </>}
             </motion.h1>
 
