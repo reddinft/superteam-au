@@ -1,27 +1,61 @@
 ---
 title: "Building on Solana in Australia: A Developer's Guide"
 publishedAt: "2024-06-10"
-authorSlug: "james-chen"
+authorSlug: "nissan-dookeran"
 category: "tutorial"
-excerpt: "Everything Australian developers need to know to start building on Solana — from local setup to your first program."
+excerpt: "Everything Australian developers need to know to start building on Solana — from why to choose it over other chains to the local community resources that will actually help you ship."
 tags:
   - "tutorial"
   - "development"
+  - "builders"
 featured: false
 ---
 
-## Getting Started
+Choosing what to build on is one of the highest-leverage decisions you'll make as a blockchain developer. Get it right and you're building with the wind at your back — good tooling, a growing user base, and a community that's invested in your success. Get it wrong and you're fighting upstream for users in an ecosystem that's never quite reached escape velocity.
 
-Solana development is surprisingly approachable. Here's what you need to know as an Australian developer.
+Here's the case for Solana in Australia, and what you need to get started.
 
-The ecosystem has matured significantly — tooling is solid, documentation is thorough, and the community is here to help.
+## Why Solana? The Practical Argument
 
-## The Stack
+There are philosophical arguments for every blockchain. Here's the practical one for Solana:
 
-Anchor framework + TypeScript is the sweet spot for most projects. Start here.
+**Speed and cost are solved problems.** Solana's sub-second finality and transaction fees measured in fractions of a cent aren't just impressive benchmarks — they make product categories viable that don't work on slower, more expensive chains. Consumer apps, micropayments, high-frequency trading, gaming — these only work when users aren't waiting seconds and paying dollars per interaction.
 
-Install the Solana CLI, set up a local validator with `solana-test-validator`, and you're ready to deploy your first program in minutes.
+**The developer tooling is mature.** The Anchor framework has made Solana program development dramatically more approachable. TypeScript clients, testing frameworks, local validators — the infrastructure for professional development exists and is actively maintained. You're not pioneering with rough edges anymore.
 
-## Finding the Community
+**The ecosystem is real.** Solana has applications that people actually use — not just DeFi power users, but games, NFT platforms, consumer apps, and increasingly, financial infrastructure. Building in an ecosystem with genuine users means your product has somewhere to go.
 
-Join the Superteam Australia Discord to connect with other AU builders, get code reviews, and find hackathon teammates.
+## The Australian Context
+
+Building on Solana in Australia comes with some specific advantages that are worth understanding:
+
+**A community that helps.** The Australian Solana community is genuinely collegial. Ask a question in the Superteam AU Discord and you'll get a real answer from someone who's actually dealt with the problem. That's not guaranteed in every ecosystem.
+
+**Time zone arbitrage.** Australian builders are active when a lot of the US and European ecosystem is asleep. For certain kinds of work — community building, customer support, real-time trading infrastructure — this is actually an advantage.
+
+**Grants and bounties are accessible.** You don't need to be based in San Francisco to access Solana Foundation grants or Superteam bounties. Australian builders have been earning real income through these programmes. The money is there if your work is good.
+
+## Resources That Actually Help
+
+**[Superteam Australia](https://superteam.fun/au)** — The first stop for any serious Australian Solana builder. Discord community, grant information, event calendar, and connections to builders who've shipped production Solana programs. Join here before anything else.
+
+**[Hackaroo](https://hackaroo.xyz)** — Australia's dedicated Solana hackathon. If you want to go from zero to shipped in a weekend, surrounded by other builders and with mentors available, Hackaroo is where you do it. It's the fastest on-ramp to the Australian Solana ecosystem.
+
+**[SolanaANZ](https://solanaanz.xyz)** — A community hub tracking the Australian and New Zealand Solana ecosystem. Useful for understanding what's been built locally, who's building it, and what events are coming up. If you want a read on the health of the community, this is the dashboard.
+
+**[Superteam Earn](https://earn.superteam.fun)** — Bounties, grants, and project listings from teams across the Solana ecosystem. Once you've got some skills, this is where you find paid work. Australian builders have been consistent earners here.
+
+## Getting Started Technically
+
+The fastest path from zero to deployed Solana program:
+
+1. Install the Solana CLI and set up a local validator with `solana-test-validator`
+2. Install Anchor: `cargo install --git https://github.com/coral-xyz/anchor avm`
+3. Scaffold your first project: `anchor init my-project`
+4. Write your program in `programs/my-project/src/lib.rs`
+5. Test locally: `anchor test`
+6. Deploy to devnet: `anchor deploy --provider.cluster devnet`
+
+TypeScript is your friend for client-side work. `@solana/web3.js` and `@coral-xyz/anchor` are the libraries you'll use most. The official Solana docs are solid, and the Anchor book at anchor-lang.com is the reference you'll keep coming back to.
+
+The community is here. The tooling is ready. What are you building?
