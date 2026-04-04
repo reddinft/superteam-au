@@ -92,7 +92,7 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
           <button
             key={g.value}
             onClick={() => setSelectedGuild(g.value)}
-            className="px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-150 cursor-pointer"
+            className="px-5 py-2 rounded-full text-sm font-medium transition-all duration-150 cursor-pointer"
             style={
               selectedGuild === g.value
                 ? {

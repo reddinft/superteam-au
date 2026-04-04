@@ -16,9 +16,9 @@ interface ButtonProps {
 }
 
 const sizeClasses: Record<ButtonSize, string> = {
-  sm: 'px-5 py-2 text-sm',
-  md: 'px-7 py-3 text-sm md:px-8 md:py-3.5 md:text-base',
-  lg: 'px-10 py-4 text-lg',
+  sm: 'px-5 py-2.5 text-sm',
+  md: 'px-8 py-3.5 text-base',
+  lg: 'px-12 py-4 text-lg',
 }
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
@@ -48,7 +48,7 @@ export default function Button({
   onClick,
   type = 'button',
 }: ButtonProps) {
-  const baseClass = `inline-flex items-center justify-center rounded-lg font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${sizeClasses[size]} ${className}`
+  const baseClass = `inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-150 cursor-pointer whitespace-nowrap ${sizeClasses[size]} ${className}`
 
   const style = variantStyles[variant]
 

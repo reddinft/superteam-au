@@ -117,7 +117,7 @@ export default function EventCard({
               </Button>
             ) : (
               <span
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg"
+                className="text-xs font-semibold px-4 py-2 rounded-xl"
                 style={{ backgroundColor: 'var(--surface-2)', color: 'var(--text-secondary)' }}
               >
                 Free Event
