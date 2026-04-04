@@ -16,8 +16,13 @@ export default function GuildCard({ icon: Icon, name, description, color, href =
 
   return (
     <div
-      className="flex flex-col gap-4 p-8 rounded-xl cursor-pointer"
       style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '1rem',
+        padding: '2rem',          // inline — bypasses Tailwind layer zero-padding bug
+        borderRadius: '12px',
+        cursor: 'pointer',
         backgroundColor: hovered ? `${color}0D` : 'var(--surface-1)',
         borderTop: hovered ? `1px solid ${color}` : `1px solid var(--border-default)`,
         borderRight: hovered ? `1px solid ${color}` : `1px solid var(--border-default)`,
@@ -31,18 +36,23 @@ export default function GuildCard({ icon: Icon, name, description, color, href =
     >
       {/* Icon */}
       <div
-        className="inline-flex p-3 rounded-xl self-start"
-        style={{ backgroundColor: `${color}18` }}
+        style={{
+          display: 'inline-flex',
+          padding: '0.75rem',
+          borderRadius: '10px',
+          alignSelf: 'flex-start',
+          backgroundColor: `${color}18`,
+        }}
       >
         <Icon size={24} style={{ color }} />
       </div>
 
       {/* Content */}
-      <div className="flex-1">
-        <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
+      <div style={{ flex: 1 }}>
+        <h3 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
           {name}
         </h3>
-        <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+        <p style={{ fontSize: '0.875rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
           {description}
         </p>
       </div>
@@ -50,11 +60,16 @@ export default function GuildCard({ icon: Icon, name, description, color, href =
       {/* CTA */}
       <a
         href={href}
-        className="text-sm font-semibold transition-opacity"
-        style={{ color, opacity: hovered ? 1 : 0.7 }}
+        style={{
+          fontSize: '0.875rem',
+          fontWeight: 600,
+          color,
+          opacity: hovered ? 1 : 0.7,
+          transition: 'opacity 0.15s ease',
+          textDecoration: 'none',
+        }}
       >
         Join Guild →
-      
       </a>
     </div>
   )

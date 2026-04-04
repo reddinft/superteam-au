@@ -11,26 +11,46 @@ export default function SectionHeader({
   subtitle,
   align = 'center',
 }: SectionHeaderProps) {
-  const alignClass = align === 'center' ? 'text-center items-center' : 'text-left items-start'
+  const textAlign = align === 'center' ? 'center' : 'left'
+  const alignItems = align === 'center' ? 'center' : 'flex-start'
 
   return (
-    <div className={`flex flex-col gap-3 ${alignClass}`}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', textAlign, alignItems }}>
       {eyebrow && (
         <span
-          className="text-xs font-semibold uppercase tracking-widest"
-          style={{ color: 'var(--color-brand-yellow)' }}
+          style={{
+            fontSize: '0.75rem',
+            fontWeight: 600,
+            textTransform: 'uppercase',
+            letterSpacing: '0.15em',
+            color: 'var(--color-brand-yellow)',
+            fontFamily: 'var(--font-mono, "JetBrains Mono", "Courier New", monospace)',
+          }}
         >
           {eyebrow}
         </span>
       )}
       <h2
-        className="text-3xl md:text-4xl font-bold leading-tight"
-        style={{ color: 'var(--text-primary)' }}
+        style={{
+          fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',   // inline — bypasses Tailwind text-size CSS var bug
+          fontWeight: 700,
+          lineHeight: 1.2,
+          color: 'var(--text-primary)',
+          margin: 0,
+        }}
       >
         {title}
       </h2>
       {subtitle && (
-        <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+        <p
+          style={{
+            fontSize: '1.125rem',
+            lineHeight: 1.6,
+            color: 'var(--text-secondary)',
+            margin: 0,
+            maxWidth: '48rem',
+          }}
+        >
           {subtitle}
         </p>
       )}
