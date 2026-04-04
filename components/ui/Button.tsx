@@ -25,14 +25,14 @@ const sizeStyles: Record<ButtonSize, React.CSSProperties> = {
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   primary: {
-    backgroundColor: 'var(--color-brand-purple)',
+    background: 'linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)',
     color: '#fff',
     border: 'none',
   },
   secondary: {
     backgroundColor: 'transparent',
-    color: 'var(--text-primary)',
-    border: '1.5px solid var(--color-brand-yellow)',
+    color: '#e2e8f0',
+    border: '1px solid rgba(124, 58, 237, 0.6)',
   },
   ghost: {
     backgroundColor: 'transparent',
@@ -45,12 +45,13 @@ const baseStyle: React.CSSProperties = {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  borderRadius: '12px',
+  borderRadius: '6px',
   fontWeight: 600,
   cursor: 'pointer',
   whiteSpace: 'nowrap',
   transition: 'all 0.15s ease',
   textDecoration: 'none',
+  letterSpacing: '0.01em',
 }
 
 export default function Button({

@@ -24,7 +24,7 @@ export default async function PartnersStrip() {
     >
       <p
         className="text-xs font-semibold uppercase tracking-widest text-center mb-6"
-        style={{ color: 'var(--text-tertiary)' }}
+        style={{ color: 'var(--text-tertiary)', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
       >
         BACKED BY
       </p>

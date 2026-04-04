@@ -72,7 +72,7 @@ export default function JoinSection() {
         >
           <span
             className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full inline-block mb-4"
-            style={{ backgroundColor: 'rgba(85,34,224,0.25)', color: '#9945FF' }}
+            style={{ backgroundColor: 'rgba(85,34,224,0.25)', color: '#9945FF', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
           >
             JOIN THE COMMUNITY
           </span>

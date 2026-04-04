@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -12,21 +13,25 @@
   --color-solana-purple: #9945FF;
   --color-accent-cyan: #00C2FF;
 
+  /* ── Font Tokens ── */
+  --font-body: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
   /* ── Surface / Background Tokens ── */
-  --bg-base: #0A0A12;
-  --bg-elevated: #111120;
-  --bg-overlay: #1A1A2E;
-  --bg-subtle: #16162A;
+  --bg-base: #0D0D1A;
+  --bg-elevated: #111122;
+  --bg-overlay: #171728;
+  --bg-subtle: #1E1E35;
 
   /* ── Surface Aliases ── */
-  --surface-0: #0A0A12;
-  --surface-1: #111120;
-  --surface-2: #1A1A2E;
-  --surface-3: #232340;
+  --surface-0: #0D0D1A;
+  --surface-1: #111122;
+  --surface-2: #171728;
+  --surface-3: #1E1E35;
 
   /* ── Border Tokens ── */
   --border-subtle: #1E1E38;
-  --border-default: #2E2E52;
+  --border-default: #2A2A4A;
   --border-strong: #5522E0;
   --border-accent: #F4A60B;
 
@@ -127,12 +132,16 @@ html {
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
-  font-family: var(--font-archivo), 'Archivo', sans-serif;
-  font-stretch: semi-expanded;
+  font-family: var(--font-body);
   font-size: var(--type-body-size);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 700;
 }
 
 /* ── Selection ── */

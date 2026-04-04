@@ -44,7 +44,7 @@ export default function EventCard({
 
   return (
     <div
-      className={`flex flex-col sm:flex-row gap-4 rounded-xl p-4 border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
+      className={`flex flex-col sm:flex-row gap-4 rounded-md p-4 border transition-all duration-200 ${isUpcoming ? '' : 'opacity-70'}`}
       style={{
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
@@ -52,7 +52,7 @@ export default function EventCard({
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-2px)'
-        e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
+        e.currentTarget.style.boxShadow = '0 0 0 1px rgba(124, 58, 237, 0.3), 0 4px 16px rgba(0,0,0,0.5)'
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = ''
