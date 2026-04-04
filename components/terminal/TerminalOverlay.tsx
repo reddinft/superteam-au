@@ -94,7 +94,7 @@ of decentralised technology in the Asia-Pacific region.
       return `How to join Superteam Australia:
 \n  1. Visit https://superteam.fun
   2. Create your profile and apply
-  3. Join our Discord: https://discord.gg/superteamau
+  3. Join our Telegram: https://t.me/superteamaustralia
   4. Attend an event — IRL or online
   5. Build something. Ship it. Repeat.
 \n  "The best time to join was yesterday. The second best is now."`

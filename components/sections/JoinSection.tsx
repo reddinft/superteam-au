@@ -23,10 +23,10 @@ const CARDS: JoinCard[] = [
   },
   {
     icon: <Hash size={28} />,
-    title: 'Discord',
-    description: 'Deep dives, working groups and ecosystem channels.',
-    cta: 'Join Discord →',
-    href: 'https://discord.gg/superteamau',
+    title: 'Twitter / X',
+    description: 'Follow for ecosystem updates, builder wins and opportunities.',
+    cta: 'Follow @SuperteamAU →',
+    href: 'https://x.com/SuperteamAU',
     variant: 'secondary',
   },
   {

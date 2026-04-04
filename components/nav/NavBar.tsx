@@ -111,7 +111,7 @@ export default function NavBar() {
           {/* CTA + hamburger */}
           <div className="flex items-center" style={{ gap: '0.75rem' }}>
             <div className="hidden md:block">
-              <Button variant="primary" size="sm" href="https://discord.gg/superteamau">
+              <Button variant="primary" size="sm" href="https://t.me/superteamaustralia">
                 Join Now
               </Button>
             </div>

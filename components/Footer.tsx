@@ -12,7 +12,7 @@ const NAV_LINKS = [
 ]
 
 const COMMUNITY_LINKS = [
-  { label: 'Join Discord', href: 'https://discord.gg/superteamau' },
+  { label: 'Join Telegram', href: 'https://t.me/superteamaustralia' },
   { label: 'Follow on X', href: 'https://twitter.com/SuperteamAU' },
   { label: 'Superteam Earn', href: 'https://earn.superteam.fun' },
 ]
@@ -57,7 +57,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://discord.gg/superteamau"
+                href="https://t.me/superteamaustralia"
                 aria-label="Discord"
                 className="rounded-lg transition-colors"
                 style={{ color: 'var(--text-tertiary)', padding: '0.5rem' }}

@@ -30,7 +30,7 @@ export default async function MembersDirectory() {
         </div>
         <MembersDirectoryClient members={memberData} />
         <div style={{ marginTop: '2rem', display: 'flex', justifyContent: 'center' }}>
-          <Button variant="ghost" size="md" href="https://discord.gg/superteamau">
+          <Button variant="ghost" size="md" href="https://t.me/superteamaustralia">
             Add Your Profile →
           </Button>
         </div>

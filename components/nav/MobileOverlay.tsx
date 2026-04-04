@@ -80,7 +80,7 @@ export default function MobileOverlay({ isOpen, onClose, links }: MobileOverlayP
 
           {/* CTA */}
           <div className="px-6 pb-10 pt-6">
-            <Button variant="primary" size="lg" href="https://discord.gg/superteamau" className="w-full justify-center">
+            <Button variant="primary" size="lg" href="https://t.me/superteamaustralia" className="w-full justify-center">
               Join Now
             </Button>
           </div>

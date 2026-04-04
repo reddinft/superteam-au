@@ -131,7 +131,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               className="flex flex-wrap items-center"
               style={{ gap: '0.75rem' }}
             >
-              <Button variant="primary" size="md" href="https://discord.gg/superteamau">
+              <Button variant="primary" size="md" href="https://t.me/superteamaustralia">
                 Get Involved
               </Button>
               <Button variant="secondary" size="md" href="#projects">
