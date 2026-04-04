@@ -1,0 +1,9 @@
+{
+  "title": "Sanctum",
+  "description": "Liquid staking token (LST) infrastructure on Solana. Australian team building the staking layer.",
+  "category": "infra",
+  "status": "active",
+  "region": ["AU"],
+  "authorSlugs": ["james-sanctum"],
+  "featured": true
+}

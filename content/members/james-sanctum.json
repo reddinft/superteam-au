@@ -1,0 +1,10 @@
+{
+  "name": "James",
+  "role": "Head of Product, Sanctum",
+  "organization": "Sanctum",
+  "guild": "dev",
+  "city": "sydney",
+  "bio": "Head of Product at Sanctum. Building liquid staking token infrastructure on Solana.",
+  "ecosystemTags": ["Solana", "DeFi", "LST"],
+  "featured": true
+}

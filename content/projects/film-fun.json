@@ -1,0 +1,10 @@
+{
+  "title": "film.fun",
+  "description": "Film and entertainment platform on Solana, building at the intersection of cinema and blockchain.",
+  "category": "other",
+  "status": "active",
+  "region": ["AU"],
+  "url": "https://film.fun",
+  "authorSlugs": ["darren-rogen"],
+  "featured": true
+}

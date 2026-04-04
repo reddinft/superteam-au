@@ -77,9 +77,11 @@ export default config({
           label: 'Status',
           options: [
             { label: 'Active', value: 'active' },
+            { label: 'In Development', value: 'in_development' },
+            { label: 'Demo Day Winner', value: 'demo_day_winner' },
             { label: 'Hackathon Project', value: 'hackathon' },
             { label: 'Honourable Mention', value: 'honourable_mention' },
-            { label: 'In Development', value: 'in_development' },
+            { label: 'Historical', value: 'historical' },
             { label: 'Archived', value: 'archived' },
           ],
           defaultValue: 'active',
@@ -95,6 +97,7 @@ export default config({
         url: fields.url({ label: 'Project URL' }),
         githubUrl: fields.url({ label: 'GitHub URL' }),
         telegramUrl: fields.text({ label: 'Telegram Username (without @)' }),
+        xUrl: fields.url({ label: 'X / Twitter URL' }),
         coverImage: fields.image({
           label: 'Cover Image',
           directory: 'public/images/projects/',
