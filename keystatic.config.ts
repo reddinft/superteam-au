@@ -93,6 +93,7 @@ export default config({
             { label: 'Australia', value: 'AU' },
             { label: 'New Zealand', value: 'NZ' },
             { label: 'Global', value: 'Global' },
+            { label: 'APAC', value: 'APAC' },
           ],
         }),
         url: fields.url({ label: 'Project URL' }),

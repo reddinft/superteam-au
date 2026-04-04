@@ -1,0 +1,9 @@
+{
+  "name": "Tony",
+  "role": "Builder",
+  "guild": "dev",
+  "city": "perth",
+  "bio": "Builder in the Perth Solana community.",
+  "ecosystemTags": ["Solana"],
+  "featured": false
+}

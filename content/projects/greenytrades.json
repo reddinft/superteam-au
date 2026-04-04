@@ -1,0 +1,9 @@
+{
+  "title": "GreenyTrades",
+  "description": "Trading and content in the AU crypto ecosystem.",
+  "category": "other",
+  "status": "active",
+  "region": ["AU"],
+  "authorSlugs": ["greeny"],
+  "featured": false
+}
