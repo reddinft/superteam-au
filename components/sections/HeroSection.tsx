@@ -73,7 +73,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               className="text-[40px] md:text-5xl lg:text-7xl font-extrabold leading-tight"
               style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
             >
-              {headline ?? <>Where AU Builders<br /><span style={{ color: 'var(--color-brand-purple-tint)' }}>Ship on Solana</span></>}
+              {headline ?? "Australia's Home for Solana Builders 🇦🇺"}
             </motion.h1>
 
             {/* Sub */}
@@ -82,24 +82,24 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
               className="text-lg md:text-xl max-w-xl"
               style={{ color: 'var(--text-secondary)' }}
             >
-              {subheadline ?? 'Sydney to Melbourne, Perth to Brisbane — Australia’s most ambitious blockchain builders, shipping together.'}
+              {subheadline ?? 'We accelerate founders, builders, creatives and institutions driving internet capital markets on Solana.'}
             </motion.p>
 
             {/* CTAs */}
             <motion.div {...fadeUp(300)} className="flex flex-wrap gap-3 items-center">
               <Button variant="primary" size="md" href="https://discord.gg/superteamau">
-                Join the Community
+                Get Involved
               </Button>
               <Button variant="secondary" size="md" href="#projects">
-                Explore Projects →
+                Explore Opportunities →
               </Button>
             </motion.div>
 
             {/* Stat Pills */}
             <motion.div {...fadeUp(400)} className="flex flex-wrap gap-3">
               {(statPills ?? [
-                { value: '23', label: 'Members' },
-                { value: '24', label: 'Events' },
+                { value: '23+', label: 'Members' },
+                { value: '24+', label: 'Events' },
                 { value: '$50K+', label: 'Earned' },
               ]).map((pill) => (
                 <StatPill key={pill.label} value={pill.value} label={pill.label} />
