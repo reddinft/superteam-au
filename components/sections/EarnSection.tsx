@@ -69,7 +69,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
               href={earnUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base transition-all duration-150"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-150 whitespace-nowrap"
               style={{
                 backgroundColor: '#14F195',
                 color: '#0A0A12',
@@ -83,7 +83,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
               href={earnUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold text-base transition-all duration-150"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-lg font-semibold text-base transition-all duration-150 whitespace-nowrap"
               style={{
                 backgroundColor: 'rgba(255,255,255,0.15)',
                 color: '#FFFFFF',
