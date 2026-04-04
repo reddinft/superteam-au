@@ -1,7 +1,7 @@
 import { reader } from '@/lib/keystatic.reader'
 import HeroSection from '@/components/sections/HeroSection'
 
-export const revalidate = 300 // revalidate every 5 minutes
+export const dynamic = 'force-dynamic' // always read latest content from disk
 import ImpactStats from '@/components/sections/ImpactStats'
 import AboutSection from '@/components/sections/AboutSection'
 import GuildsSection from '@/components/sections/GuildsSection'
