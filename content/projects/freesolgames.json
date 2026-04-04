@@ -1,0 +1,9 @@
+{
+  "title": "FreesolGames",
+  "description": "Gaming project in the AU Solana ecosystem.",
+  "category": "gaming",
+  "status": "unknown",
+  "region": ["AU"],
+  "authorSlugs": ["freesolgames-dev"],
+  "featured": false
+}

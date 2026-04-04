@@ -1,0 +1,9 @@
+{
+  "title": "MetEngine",
+  "description": "Infrastructure project in the AU/NZ Solana ecosystem.",
+  "category": "infra",
+  "status": "unknown",
+  "region": ["AU", "NZ"],
+  "authorSlugs": ["harsh-metengine"],
+  "featured": false
+}

@@ -1,0 +1,9 @@
+{
+  "title": "NectarFi",
+  "description": "DeFi project in the AU/NZ Solana ecosystem.",
+  "category": "defi",
+  "status": "unknown",
+  "region": ["AU", "NZ"],
+  "authorSlugs": ["danny-nectarfi"],
+  "featured": false
+}

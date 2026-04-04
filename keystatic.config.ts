@@ -83,6 +83,7 @@ export default config({
             { label: 'Honourable Mention', value: 'honourable_mention' },
             { label: 'Historical', value: 'historical' },
             { label: 'Archived', value: 'archived' },
+            { label: 'Unknown', value: 'unknown' },
           ],
           defaultValue: 'active',
         }),

@@ -1,0 +1,9 @@
+{
+  "title": "BonkBets",
+  "description": "Solana application from the AU/NZ ecosystem.",
+  "category": "other",
+  "status": "active",
+  "region": ["AU", "NZ"],
+  "authorSlugs": ["scot-wertin"],
+  "featured": false
+}
