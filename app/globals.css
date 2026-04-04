@@ -14,7 +14,7 @@
   --color-accent-cyan: #00C2FF;
 
   /* ── Font Tokens ── */
-  --font-body: 'JetBrains Mono', 'Courier New', monospace;
+  --font-body: 'JetBrains Mono', 'Courier New', monospace, 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji';
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 
   /* ── Surface / Background Tokens ── */
