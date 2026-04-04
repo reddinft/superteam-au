@@ -2,7 +2,17 @@
 **Theme:** Southern Cross Terminal
 **Last updated:** 2026-04-04
 
-> This document contains all raw design tokens, typography, components, and layout specs extracted directly from the codebase. Use it to reconstruct the design in Figma or any other tool.
+> This document contains all raw design tokens, typography, components, and layout specs extracted directly from the codebase. Screenshots were captured at 1440px desktop width from the live dev build. Use this to reconstruct the design in Figma or any other tool.
+
+---
+
+## 0. Full Page Preview
+
+### Desktop (1440px)
+![Full page desktop](public/design-system-screenshots/00-full-page.png)
+
+### Mobile (390px)
+![Full page mobile](public/design-system-screenshots/mobile-full-page.png)
 
 ---
 
@@ -251,6 +261,8 @@ Three variants × three sizes.
 
 ### Nav Bar
 
+![Nav Bar](public/design-system-screenshots/01-navbar.png)
+
 - Position: `fixed`, `top: 0`, full width, `z-index: 50`
 - At top: `background: rgba(10,10,18,0.7)`, `backdrop-filter: blur(16px)`
 - Scrolled (>60px): `background: rgba(10,10,18,0.96)`, `backdrop-filter: blur(16px)`
@@ -264,52 +276,88 @@ Three variants × three sizes.
 
 ---
 
-### Guild Card
+### Hero Section
 
-- Left border: `4px solid {guild colour}`
-- All other borders: `1px solid --border-default`
-- Background: `--surface-1`
-- Hover: background tints to `{guild colour}0D`, all borders → guild colour, box-shadow glow
-- Card height: equal within grid row (CSS grid `items-stretch` + `height: 100%`)
+![Hero Section](public/design-system-screenshots/hero.png)
+
+- Full viewport height (`min-h-screen`)
+- Background: `radial-gradient(ellipse at 50% -20%, rgba(85,34,224,0.4) 0%, rgba(13,13,26,0) 60%), #0D0D1A`
+- H1 gradient: `linear-gradient(to right, #a78bfa, #c4b5fd, #5eead4)` — clamp 2rem → 3.5rem
+- Australian flag SVG displayed as flex sibling to H1 (56×28px, `border-radius: 3px`)
+- Stat pills: `background: rgba(255,255,255,0.05)`, `border: 1px solid rgba(255,255,255,0.1)`
+
+---
+
+### About / Pillars Section
+
+![About Section](public/design-system-screenshots/about.png)
+
+- 3-column grid on desktop, stacked on mobile
+- Each pillar card: `border-left: 4px solid {pillar colour}`, `background: --surface-1`
+- Card title: 16px, weight 700; bullet text: 14px, `--text-secondary`
+- Icon badge: `background: {colour}18`, rounded-lg
+
+---
+
+### Guilds Section
+
+![Guilds Section](public/design-system-screenshots/guilds.png)
+
+- 4-column grid (`grid-cols-4` on lg+)
+- Equal height cards via CSS grid `items-stretch` + `height: 100%`
+- Left accent border: `4px solid {guild colour}`
 - "Join Guild →" pinned to bottom with `margin-top: auto`
-- Click: "🚧 Coming soon" toast (2.5s, top-right of card)
+- Hover: full border glow in guild colour + subtle background tint
+- Click: 🚧 Coming soon toast (top-right, 2.5s)
 
 ---
 
-### Project Card
+### Projects Section
 
-- Border: `1px solid --border-default`
-- Hover: `translateY(-2px)`, border → category hover colour, box-shadow
-- Description: clamped to 2 lines (`-webkit-line-clamp: 2`)
-- Click: opens full **Project Modal**
+![Projects Section](public/design-system-screenshots/projects.png)
 
----
-
-### Project Modal
-
-- Overlay: `rgba(0,0,0,0.75)`, `position: fixed, inset: 0`
-- Card: max-width 560px, centred, `--surface-2`, `border-radius: 16px`, padding 2rem
-- Animation: fade + scale in
-- Closes on: backdrop click, Escape key
-- Contents: category badge → title → full description → "Visit Project →" (if URL) → "Built by" with author socials
+- Filterable grid with category pills
+- Description clamped to 2 lines
+- Click any card → full project modal with untruncated info + author socials + live URL
 
 ---
 
-### Section Header (Eyebrow + Title)
+### Events Section
 
-- Eyebrow: `type-label`, `--text-tertiary`, uppercase, `letter-spacing: 0.15em`
-- Title: `type-h2`, `--text-primary`
-- Optional subtitle: `type-body-lg`, `--text-secondary`
+![Events Section](public/design-system-screenshots/events.png)
+
+- Cards show date, location, type badge, RSVP/recap links
+- Past events show "Recap →" instead of RSVP
 
 ---
 
-### Toast / Coming Soon
+### Members Directory
 
-- Background: `--surface-3`
-- Border: `1px solid {accent colour}`
-- Text: `--text-primary`, 13px, weight 600
-- Padding: `6px 14px`, border-radius: 6px
-- Duration: 2.5s auto-dismiss
+![Members Directory](public/design-system-screenshots/members.png)
+
+- Filterable by guild and city
+- Avatar with fallback initials
+- Ecosystem tag pills
+
+---
+
+### Join / CTA Section
+
+![Join Section](public/design-system-screenshots/join.png)
+
+- Deep purple radial gradient background
+- 3-column card grid: Telegram (primary/purple), Twitter/X, Earn
+- Unknown URLs → "🚧 Coming Soon" button state
+
+---
+
+### Footer
+
+![Footer](public/design-system-screenshots/footer.png)
+
+- Background: `#0A0A10`
+- `border-top: 1px solid --border-subtle`
+- Logo + nav links + social icons + copyright
 
 ---
 
@@ -381,3 +429,4 @@ When recreating in Figma:
 5. **Pages** — Desktop (1280px), Tablet (768px), Mobile (390px)
 6. **Grid** — 12 column, 80px gutters (desktop), 24px (mobile)
 7. **Auto layout** — use throughout for spacing consistency
+8. **Import screenshots** — use `public/design-system-screenshots/` as reference frames, one per section
