@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate": "node scripts/validate-content.mjs",
+    "validate:file": "node scripts/validate-content-single.mjs"
   },
   "dependencies": {
     "@keystatic/core": "^0.5.50",
