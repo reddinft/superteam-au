@@ -48,7 +48,7 @@ export default function EarnSection({ earnUrl = 'https://superteam.fun/earn' }: 
         >
           <span
             className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full"
-            style={{ backgroundColor: 'rgba(20,241,149,0.15)', color: '#14F195' }}
+            style={{ backgroundColor: 'rgba(20,241,149,0.15)', color: '#14F195', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
           >
             OPPORTUNITIES
           </span>

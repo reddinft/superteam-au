@@ -43,7 +43,7 @@ export default function ProjectCard({
 
   return (
     <div
-      className="rounded-xl p-6 border flex flex-col transition-all duration-200 group"
+      className="rounded p-6 border flex flex-col transition-all duration-200 group"
       style={{
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
@@ -53,7 +53,7 @@ export default function ProjectCard({
         const el = e.currentTarget as HTMLElement
         el.style.borderColor = cat.hoverBorder
         el.style.transform = 'translateY(-2px)'
-        el.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
+        el.style.boxShadow = '0 0 0 1px rgba(124, 58, 237, 0.3), 0 4px 16px rgba(0,0,0,0.5)'
       }}
       onMouseLeave={(e) => {
         const el = e.currentTarget as HTMLElement

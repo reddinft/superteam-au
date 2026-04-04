@@ -94,7 +94,7 @@ export default function MembersDirectoryClient({ members }: MembersDirectoryClie
             onClick={() => setSelectedGuild(g.value)}
             style={{
               padding: '8px 18px',
-              borderRadius: '9999px',
+              borderRadius: '6px',
               fontSize: '0.875rem',
               fontWeight: 500,
               cursor: 'pointer',

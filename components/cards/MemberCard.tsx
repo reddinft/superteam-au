@@ -66,7 +66,7 @@ export default function MemberCard({
 
   return (
     <div
-      className="rounded-xl p-5 border flex flex-col gap-3"
+      className="rounded-md p-5 border flex flex-col gap-3"
       style={{
         backgroundColor: 'var(--surface-1)',
         borderColor: 'var(--border-default)',
@@ -74,7 +74,7 @@ export default function MemberCard({
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-2px)'
-        e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.5)'
+        e.currentTarget.style.boxShadow = '0 0 0 1px rgba(124, 58, 237, 0.3), 0 4px 16px rgba(0,0,0,0.5)'
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = ''

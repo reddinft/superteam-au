@@ -46,6 +46,14 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
           WebkitMaskImage: 'radial-gradient(ellipse at center, black 30%, transparent 80%)',
         }} />
       </div>
+      {/* Ogma-style gradient overlay */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'radial-gradient(ellipse at top left, rgba(88, 28, 235, 0.15) 0%, transparent 60%), radial-gradient(ellipse at bottom right, rgba(20, 184, 166, 0.10) 0%, transparent 60%)',
+        pointerEvents: 'none',
+      }} />
+
       {/* Ambient pulse overlay */}
       <motion.div
         className="absolute inset-0 pointer-events-none"
@@ -62,7 +70,7 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             <motion.p
               {...fadeUp(0)}
               className="text-xs font-semibold uppercase tracking-widest"
-              style={{ color: 'var(--color-brand-yellow)' }}
+              style={{ color: 'var(--color-brand-yellow)', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
             >
               SUPERTEAM AUSTRALIA
             </motion.p>
@@ -71,7 +79,13 @@ export default function HeroSection({ headline, subheadline, statPills }: HeroSe
             <motion.h1
               {...fadeUp(100)}
               className="text-[40px] md:text-5xl lg:text-7xl font-extrabold leading-tight"
-              style={{ color: 'var(--text-primary)', letterSpacing: '-0.02em' }}
+              style={{
+                background: 'linear-gradient(to right, #a78bfa, #c4b5fd, #5eead4)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                letterSpacing: '-0.02em',
+              }}
             >
               {headline ?? "Australia's Home for Solana Builders 🇦🇺"}
             </motion.h1>

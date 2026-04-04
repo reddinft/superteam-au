@@ -18,7 +18,7 @@ export default function SectionHeader({
       {eyebrow && (
         <span
           className="text-xs font-semibold uppercase tracking-widest"
-          style={{ color: 'var(--color-brand-yellow)' }}
+          style={{ color: 'var(--color-brand-yellow)', fontFamily: 'var(--font-mono)', letterSpacing: '0.15em' }}
         >
           {eyebrow}
         </span>
